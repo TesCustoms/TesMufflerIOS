@@ -3,4 +3,4 @@ Swift code for skeleton iOS app based off Adola alpha prototype. Login into Adol
 
 Links to 100 Days of Swift course: https://www.hackingwithswift.com/100
 
-NOT THE SAME AT SWIFT UI CODE FOR STAND ALONE APPLE WATCH APP
+NOT THE SAME AS SWIFT UI CODE FOR STAND ALONE APPLE WATCH APP, PLEASE SEE https://github.com/TesCustoms/TesMufflerAppleWatch
