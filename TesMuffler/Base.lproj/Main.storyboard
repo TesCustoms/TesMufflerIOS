@@ -159,7 +159,7 @@
                                 <state key="normal" title="How did you hear about us?"/>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-OQ-Dgs">
-                                <rect key="frame" x="0.0" y="3" width="390" height="44"/>
+                                <rect key="frame" x="-1" y="3" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Sign Up" id="ktu-i1-RdP"/>
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-OC-KKy">
-                                <rect key="frame" x="-2" y="47" width="389" height="44"/>
+                                <rect key="frame" x="-3" y="47" width="389" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <items>
@@ -242,7 +242,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Logout"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="OLb-qD-KKy"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="jLX-VT-54e"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="VIN#: 1234567890ABC" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oXi-SQ-ZGY">
@@ -431,7 +431,7 @@ support privacy stealing ads!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-0k-Gbx">
-                                <rect key="frame" x="-1" y="3" width="391" height="44"/>
+                                <rect key="frame" x="-1" y="3" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="ptf-r8-yRB"/>
@@ -470,7 +470,11 @@ support privacy stealing ads!</string>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <items>
                                                 <navigationItem title="Legal" id="WkF-gj-K8D">
-                                                    <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="jZm-Wm-aSi"/>
+                                                    <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="jZm-Wm-aSi">
+                                                        <connections>
+                                                            <action selector="Back:" destination="T13-fs-Ff1" id="UUX-2b-GCy"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
@@ -505,6 +509,7 @@ support privacy stealing ads!</string>
                     <navigationItem key="navigationItem" id="Wzw-sV-HYa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFs-T3-ail" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="T13-fs-Ff1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3786" y="10"/>
         </scene>

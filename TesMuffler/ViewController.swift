@@ -14,9 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-  
-// These work but not while in a tabbed view
-  
+    
+    // These work but not while in a tabbed view
+    
     
     
     /*
@@ -54,4 +54,7 @@ class ViewController: UIViewController {
         let roundedIdle = Int(idleValue*100)
         idleVolLabel.text = "\(roundedIdle)%"
     }
+    
+    
+    
 }
