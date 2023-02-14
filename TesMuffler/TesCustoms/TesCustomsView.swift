@@ -186,10 +186,10 @@ class TesCustomsView: UIView {
     }
     
     func updateAcceleratorPercentage() {
-        hornPercentStatusLabel.text = "\(Int(acceleratorSliderBar.value))%"
+        acceleratorPercentStatusLabel.text = "\(Int(acceleratorSliderBar.value))%"
     }
     
     func updateIdlePercentage() {
-        hornPercentStatusLabel.text = "\(Int(idleSliderBar.value))%"
+        idlePercentStatusLabel.text = "\(Int(idleSliderBar.value))%"
     }
 }

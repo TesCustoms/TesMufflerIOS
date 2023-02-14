@@ -49,11 +49,11 @@ class TesCustomsViewController: UIViewController {
     
     @objc
     private func didMoveAcceleratorSlider() {
-        contentView.updateHornPercentage()
+        contentView.updateAcceleratorPercentage()
     }
     
     @objc
     private func didMoveIdleSlider() {
-        contentView.updateHornPercentage()
+        contentView.updateIdlePercentage()
     }
 }
