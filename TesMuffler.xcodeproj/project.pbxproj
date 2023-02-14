@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58042D21299BF1B0005273F4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D20299BF1B0005273F4 /* SignUpView.swift */; };
+		58042D21299BF1B0005273F4 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D20299BF1B0005273F4 /* LoginScreenView.swift */; };
+		58042D26299BFA3C005273F4 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D25299BFA3C005273F4 /* SignUpScreenViewController.swift */; };
+		58042D28299BFA65005273F4 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D27299BFA65005273F4 /* SignUpScreenView.swift */; };
+		58042D2B299C04F5005273F4 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D2A299C04F5005273F4 /* SignUpModel.swift */; };
+		58042D2D299C0563005273F4 /* TesCustomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D2C299C0563005273F4 /* TesCustomsViewController.swift */; };
+		58042D2F299C058A005273F4 /* TesCustomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D2E299C058A005273F4 /* TesCustomsView.swift */; };
+		58042D31299C061D005273F4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D30299C061D005273F4 /* TabBarController.swift */; };
+		58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D34299C07F6005273F4 /* ProfileViewController.swift */; };
+		58042D37299C0801005273F4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D36299C0801005273F4 /* ProfileView.swift */; };
 		DB1D8779291B150100FED633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D8778291B150100FED633 /* AppDelegate.swift */; };
 		DB1D877B291B150100FED633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D877A291B150100FED633 /* SceneDelegate.swift */; };
-		DB1D877D291B150100FED633 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D877C291B150100FED633 /* SignUpViewController.swift */; };
+		DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D877C291B150100FED633 /* LoginScreenViewController.swift */; };
 		DB1D8780291B150100FED633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1D877E291B150100FED633 /* Main.storyboard */; };
 		DB1D8782291B150200FED633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1D8781291B150200FED633 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		58042D20299BF1B0005273F4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		58042D20299BF1B0005273F4 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		58042D25299BFA3C005273F4 /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
+		58042D27299BFA65005273F4 /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		58042D2A299C04F5005273F4 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		58042D2C299C0563005273F4 /* TesCustomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesCustomsViewController.swift; sourceTree = "<group>"; };
+		58042D2E299C058A005273F4 /* TesCustomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesCustomsView.swift; sourceTree = "<group>"; };
+		58042D30299C061D005273F4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		58042D34299C07F6005273F4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		58042D36299C0801005273F4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DB1D8775291B150100FED633 /* TesMuffler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesMuffler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1D8778291B150100FED633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1D877A291B150100FED633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB1D877C291B150100FED633 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DB1D877C291B150100FED633 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		DB1D877F291B150100FED633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB1D8781291B150200FED633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1D8786291B150200FED633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,10 +67,54 @@
 		58042D23299BF8CA005273F4 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DB1D877C291B150100FED633 /* SignUpViewController.swift */,
-				58042D20299BF1B0005273F4 /* SignUpView.swift */,
+				DB1D877C291B150100FED633 /* LoginScreenViewController.swift */,
+				58042D20299BF1B0005273F4 /* LoginScreenView.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		58042D24299BFA14005273F4 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DB1D8781291B150200FED633 /* Assets.xcassets */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		58042D29299C0420005273F4 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				58042D25299BFA3C005273F4 /* SignUpScreenViewController.swift */,
+				58042D27299BFA65005273F4 /* SignUpScreenView.swift */,
+				58042D2A299C04F5005273F4 /* SignUpModel.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		58042D32299C063F005273F4 /* TesCustoms */ = {
+			isa = PBXGroup;
+			children = (
+				58042D2C299C0563005273F4 /* TesCustomsViewController.swift */,
+				58042D2E299C058A005273F4 /* TesCustomsView.swift */,
+			);
+			path = TesCustoms;
+			sourceTree = "<group>";
+		};
+		58042D33299C07C6005273F4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				58042D30299C061D005273F4 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		58042D38299C0804005273F4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				58042D34299C07F6005273F4 /* ProfileViewController.swift */,
+				58042D36299C0801005273F4 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DB1D876C291B150000FED633 = {
@@ -76,10 +136,14 @@
 		DB1D8777291B150100FED633 /* TesMuffler */ = {
 			isa = PBXGroup;
 			children = (
-				58042D22299BF8A7005273F4 /* Resources */,
-				58042D23299BF8CA005273F4 /* LoginScreen */,
-				DB1D8781291B150200FED633 /* Assets.xcassets */,
+				58042D24299BFA14005273F4 /* Media */,
 				DB1D8786291B150200FED633 /* Info.plist */,
+				58042D22299BF8A7005273F4 /* Resources */,
+				58042D38299C0804005273F4 /* Profile */,
+				58042D33299C07C6005273F4 /* TabBar */,
+				58042D32299C063F005273F4 /* TesCustoms */,
+				58042D29299C0420005273F4 /* SignUpScreen */,
+				58042D23299BF8CA005273F4 /* LoginScreen */,
 			);
 			path = TesMuffler;
 			sourceTree = "<group>";
@@ -154,10 +218,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58042D21299BF1B0005273F4 /* SignUpView.swift in Sources */,
-				DB1D877D291B150100FED633 /* SignUpViewController.swift in Sources */,
+				58042D26299BFA3C005273F4 /* SignUpScreenViewController.swift in Sources */,
+				58042D21299BF1B0005273F4 /* LoginScreenView.swift in Sources */,
+				58042D2D299C0563005273F4 /* TesCustomsViewController.swift in Sources */,
+				58042D2F299C058A005273F4 /* TesCustomsView.swift in Sources */,
+				58042D31299C061D005273F4 /* TabBarController.swift in Sources */,
+				58042D28299BFA65005273F4 /* SignUpScreenView.swift in Sources */,
+				58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */,
+				DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */,
+				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
 				DB1D8779291B150100FED633 /* AppDelegate.swift in Sources */,
 				DB1D877B291B150100FED633 /* SceneDelegate.swift in Sources */,
+				58042D2B299C04F5005273F4 /* SignUpModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,18 +1,19 @@
 /*
  __authors__    = ["Hollis Kwan"]
- __date__       = 2023/02/13
+ __date__       = 2023/02/14
  __deprecated__ = False
- __doc__        = LoginScreenVC controller setup
+ __doc__        = SignUpScreenVC setup
  __email__      = "holliskwan.ios@gmail.com"
  __license__    = "MIT"
  __status__     = "Development"
  */
 
+import Foundation
 import UIKit
 
-class LoginScreenViewController: UIViewController {
+class SignUpScreenViewController: UIViewController {
     
-    let contentView = LoginScreenView()
+    private let contentView = SignUpScreenView()
     
     override func loadView() {
         view = contentView
