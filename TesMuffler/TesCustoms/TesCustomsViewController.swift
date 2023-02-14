@@ -21,5 +21,39 @@ class TesCustomsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        slideBarTargetSetup()
+    }
+    
+    private func slideBarTargetSetup() {
+        contentView.hornSliderBar.addTarget(
+            self,
+            action: #selector(didMoveHornSlider),
+            for: .valueChanged
+        )
+        contentView.acceleratorSliderBar.addTarget(
+            self,
+            action: #selector(didMoveAcceleratorSlider),
+            for: .valueChanged
+        )
+        contentView.idleSliderBar.addTarget(
+            self,
+            action: #selector(didMoveIdleSlider),
+            for: .valueChanged
+        )
+    }
+    
+    @objc
+    private func didMoveHornSlider() {
+        contentView.updateHornPercentage()
+    }
+    
+    @objc
+    private func didMoveAcceleratorSlider() {
+        contentView.updateHornPercentage()
+    }
+    
+    @objc
+    private func didMoveIdleSlider() {
+        contentView.updateHornPercentage()
     }
 }

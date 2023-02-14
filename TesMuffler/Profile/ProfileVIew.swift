@@ -17,8 +17,13 @@ class ProfileView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray6
-        view.layer.borderWidth = 0.2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        return view
+    }()
+    
+    let navigationBarView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray6
         return view
     }()
     
@@ -134,7 +139,7 @@ class ProfileView: UIView {
         addSubview(vinLabel)
         addSubview(logoutButton)
         
-        profileImageView.topAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: 40).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor, constant: 40).isActive = true
         profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 240).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
@@ -173,30 +178,35 @@ class ProfileView: UIView {
     
     private func navBarSetUp() {
         addSubview(navigationView)
-        addSubview(profileLabel)
+        navigationView.addSubview(navigationBarView)
         
-        navigationView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
+        navigationView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         navigationView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         navigationView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         navigationView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        navigationView.addSubview(profileLabel)
+        navigationBarView.topAnchor.constraint(equalTo: navigationView.bottomAnchor).isActive = true
+        navigationBarView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        navigationBarView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        navigationBarView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        profileLabel.centerXAnchor.constraint(equalTo: navigationView.centerXAnchor).isActive = true
-        profileLabel.centerYAnchor.constraint(equalTo: navigationView.centerYAnchor).isActive = true
+        navigationBarView.addSubview(profileLabel)
+        
+        profileLabel.centerXAnchor.constraint(equalTo: navigationBarView.centerXAnchor).isActive = true
+        profileLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor).isActive = true
         profileLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        navigationView.addSubview(blank2Button)
+        navigationBarView.addSubview(blank2Button)
         
-        blank2Button.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 10).isActive = true
-        blank2Button.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: -10).isActive = true
-        blank2Button.rightAnchor.constraint(equalTo: navigationView.rightAnchor,constant: -10).isActive = true
+        blank2Button.topAnchor.constraint(equalTo: navigationBarView.topAnchor, constant: 10).isActive = true
+        blank2Button.bottomAnchor.constraint(equalTo: navigationBarView.bottomAnchor, constant: -10).isActive = true
+        blank2Button.rightAnchor.constraint(equalTo: navigationBarView.rightAnchor,constant: -10).isActive = true
         blank2Button.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
-        navigationView.addSubview(blankButton)
+        navigationBarView.addSubview(blankButton)
         
-        blankButton.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 10).isActive = true
-        blankButton.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: -10).isActive = true
+        blankButton.topAnchor.constraint(equalTo: navigationBarView.topAnchor, constant: 10).isActive = true
+        blankButton.bottomAnchor.constraint(equalTo: navigationBarView.bottomAnchor, constant: -10).isActive = true
         blankButton.rightAnchor.constraint(equalTo: blank2Button.leftAnchor).isActive = true
         blankButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
     }

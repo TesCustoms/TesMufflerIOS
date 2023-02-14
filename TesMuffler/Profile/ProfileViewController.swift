@@ -21,6 +21,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.logoutButton.addTarget(
+            self,
+            action: #selector(didTapLogout),
+            for: .touchUpInside
+        )
     }
     
+    @objc
+    private func didTapLogout() {
+        dismiss(animated: true)
+    }
 }

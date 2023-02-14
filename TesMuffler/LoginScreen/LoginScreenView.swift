@@ -13,7 +13,7 @@ import UIKit
 
 class LoginScreenView: UIView {
     
-    let brandTitle: UILabel = {
+    let brandTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "TesCustoms"
@@ -30,7 +30,7 @@ class LoginScreenView: UIView {
         return imageView
     }()
     
-    let logInTitle: UILabel = {
+    let logInTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Log In"
@@ -85,31 +85,31 @@ class LoginScreenView: UIView {
     }
     
     private func setConstraints() {
-        addSubview(brandTitle)
+        addSubview(brandTitleLabel)
         addSubview(brandImageView)
-        addSubview(logInTitle)
+        addSubview(logInTitleLabel)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(enterButton)
         addSubview(signUpButton)
         
-        brandTitle.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
-        brandTitle.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        brandTitle.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        brandTitle.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        brandTitleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
+        brandTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        brandTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        brandTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        brandImageView.topAnchor.constraint(equalTo: brandTitle.bottomAnchor, constant: 20).isActive = true
+        brandImageView.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor, constant: 20).isActive = true
         brandImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         brandImageView.heightAnchor.constraint(equalToConstant: 240).isActive = true
         brandImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
         
-        logInTitle.topAnchor.constraint(equalTo: brandImageView.bottomAnchor, constant: 30).isActive = true
-        logInTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        logInTitle.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        logInTitle.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        logInTitle.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        logInTitleLabel.topAnchor.constraint(equalTo: brandImageView.bottomAnchor, constant: 30).isActive = true
+        logInTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        logInTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logInTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        logInTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        emailTextField.topAnchor.constraint(equalTo: logInTitle.bottomAnchor, constant: 10).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: logInTitleLabel.bottomAnchor, constant: 10).isActive = true
         emailTextField.widthAnchor.constraint(equalToConstant: 180).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
