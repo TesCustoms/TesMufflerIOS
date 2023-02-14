@@ -136,7 +136,7 @@ class TesCustomsView: UIView {
         brandTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         hornTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        hornTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 20).isActive = true
+        hornTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 30).isActive = true
         hornTitleLabel.widthAnchor.constraint(equalToConstant: 250).isActive = true
         hornTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
@@ -151,7 +151,7 @@ class TesCustomsView: UIView {
         hornPercentStatusLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         acceleratorTitleLabel.topAnchor.constraint(equalTo: hornPercentStatusLabel.bottomAnchor,constant: 30).isActive = true
-        acceleratorTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 20).isActive = true
+        acceleratorTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 30).isActive = true
         acceleratorTitleLabel.widthAnchor.constraint(equalToConstant: 250).isActive = true
         acceleratorTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
@@ -166,7 +166,7 @@ class TesCustomsView: UIView {
         acceleratorPercentStatusLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         idleTitleLabel.topAnchor.constraint(equalTo: acceleratorPercentStatusLabel.bottomAnchor,constant: 30).isActive = true
-        idleTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 20).isActive = true
+        idleTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 30).isActive = true
         idleTitleLabel.widthAnchor.constraint(equalToConstant: 250).isActive = true
         idleTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
