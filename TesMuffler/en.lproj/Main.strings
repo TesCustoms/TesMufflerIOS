@@ -1,0 +1,75 @@
+
+/* Class = "UITabBarItem"; title = "Connect"; ObjectID = "49s-SQ-YPn"; */
+"49s-SQ-YPn.title" = "Connect";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "A00-O7-QxZ"; */
+"A00-O7-QxZ.title" = "Profile";
+
+/* Class = "UILabel"; text = "Member Since:"; ObjectID = "Bya-6J-v7Y"; */
+"Bya-6J-v7Y.text" = "Member Since:";
+
+/* Class = "UITabBarItem"; title = "Connect"; ObjectID = "G52-uT-nQc"; */
+"G52-uT-nQc.title" = "Connect";
+
+/* Class = "UILabel"; text = "Alex"; ObjectID = "IJo-pc-6gS"; */
+"IJo-pc-6gS.text" = "Alex";
+
+/* Class = "UISegmentedControl"; Jw2-la-api.segmentTitles[0] = "Log In"; ObjectID = "Jw2-la-api"; */
+"Jw2-la-api.segmentTitles[0]" = "Log In";
+
+/* Class = "UISegmentedControl"; Jw2-la-api.segmentTitles[1] = "Sign Up"; ObjectID = "Jw2-la-api"; */
+"Jw2-la-api.segmentTitles[1]" = "Sign Up";
+
+/* Class = "UIButton"; configuration.title = "Enter"; ObjectID = "OmP-7Q-UM3"; */
+"OmP-7Q-UM3.configuration.title" = "Enter";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OmP-7Q-UM3"; */
+"OmP-7Q-UM3.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "email"; ObjectID = "TxO-Cb-MIr"; */
+"TxO-Cb-MIr.text" = "email";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "Usm-IN-DaK"; */
+"Usm-IN-DaK.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Connect"; ObjectID = "V5J-Hy-J4W"; */
+"V5J-Hy-J4W.title" = "Connect";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "W7T-24-E8a"; */
+"W7T-24-E8a.title" = "Profile";
+
+/* Class = "UINavigationItem"; title = "Legal"; ObjectID = "WkF-gj-K8D"; */
+"WkF-gj-K8D.title" = "Legal";
+
+/* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "XC8-kY-9Hf"; */
+"XC8-kY-9Hf.placeholder" = "e-mail";
+
+/* Class = "UITextView"; text = "Submit app issues to:\nhttps://github.com/TesCustoms/Tes/issues\n\nPrivacy Policy:\nUsers will only see ads from aftermarket\nshops like AutoZone and West Coast Customs\nin this app. These are industry specific ads,\nand not user tracked in ANY way. We don't\nsupport privacy stealing ads!"; ObjectID = "Z7d-9w-0BM"; */
+"Z7d-9w-0BM.text" = "Submit app issues to:\nhttps://github.com/TesCustoms/Tes/issues\n\nPrivacy Policy:\nUsers will only see ads from aftermarket\nshops like AutoZone and West Coast Customs\nin this app. These are industry specific ads,\nand not user tracked in ANY way. We don't\nsupport privacy stealing ads!";
+
+/* Class = "UILabel"; text = "TesCustoms"; ObjectID = "dFe-lv-06I"; */
+"dFe-lv-06I.text" = "TesCustoms";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "eKm-va-gwG"; */
+"eKm-va-gwG.title" = "Title";
+
+/* Class = "UILabel"; text = "2022"; ObjectID = "fCp-yR-bG4"; */
+"fCp-yR-bG4.text" = "2022";
+
+/* Class = "UIButton"; configuration.title = "Edit Profile"; ObjectID = "g3x-nU-bvy"; */
+"g3x-nU-bvy.configuration.title" = "Edit Profile";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g3x-nU-bvy"; */
+"g3x-nU-bvy.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Logout"; ObjectID = "hpo-dx-xoB"; */
+"hpo-dx-xoB.configuration.title" = "Logout";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hpo-dx-xoB"; */
+"hpo-dx-xoB.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "nuke codes ;)"; ObjectID = "lTy-de-kwo"; */
+"lTy-de-kwo.placeholder" = "nuke codes ;)";
+
+/* Class = "UITextView"; text = "VIN#: 1234567890ABC"; ObjectID = "oXi-SQ-ZGY"; */
+"oXi-SQ-ZGY.text" = "VIN#: 1234567890ABC";
