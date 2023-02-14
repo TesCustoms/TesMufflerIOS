@@ -41,7 +41,6 @@ class LoginScreenViewController: UIViewController {
     @objc
     private func didTapEnter() {
         let tabBarVC = TabBarController()
-        tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true)
     }
 }
