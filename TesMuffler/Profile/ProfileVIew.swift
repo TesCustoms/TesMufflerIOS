@@ -27,6 +27,20 @@ class ProfileView: UIView {
         return view
     }()
     
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .white
+        return scrollView
+    }()
+    
+    let backView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
+    
     let profileLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +137,7 @@ class ProfileView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         navBarSetUp()
+        setScrollView()
         setConstraints()
     }
     
@@ -130,50 +145,23 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setConstraints() {
-        addSubview(profileImageView)
-        addSubview(nameLabel)
-        addSubview(emailLabel)
-        addSubview(memeberSinceLabel)
-        addSubview(yearLabel)
-        addSubview(vinLabel)
-        addSubview(logoutButton)
+    private func setScrollView() {
+        addSubview(scrollView)
         
-        profileImageView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor, constant: 40).isActive = true
-        profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 240).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        scrollView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
         
-        nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        scrollView.addSubview(backView)
         
-        emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15).isActive = true
-        emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        emailLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        memeberSinceLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 15).isActive = true
-        memeberSinceLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        memeberSinceLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        memeberSinceLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        yearLabel.topAnchor.constraint(equalTo: memeberSinceLabel.bottomAnchor, constant: 5).isActive = true
-        yearLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        yearLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        yearLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        vinLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -5).isActive = true
-        vinLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        vinLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        vinLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        logoutButton.bottomAnchor.constraint(equalTo: vinLabel.topAnchor, constant: -10).isActive = true
-        logoutButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        logoutButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        logoutButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
+        backView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
+        backView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
+        backView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor).isActive = true
+        backView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor).isActive = true
+        backView.heightAnchor.constraint(equalToConstant: 700).isActive = true
+        backView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        scrollView.contentSize = CGSize(width: .zero, height: 700)
     }
     
     private func navBarSetUp() {
@@ -210,4 +198,49 @@ class ProfileView: UIView {
         blankButton.rightAnchor.constraint(equalTo: blank2Button.leftAnchor).isActive = true
         blankButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
     }
+    private func setConstraints() {
+        backView.addSubview(profileImageView)
+        backView.addSubview(nameLabel)
+        backView.addSubview(emailLabel)
+        backView.addSubview(memeberSinceLabel)
+        backView.addSubview(yearLabel)
+        backView.addSubview(vinLabel)
+        backView.addSubview(logoutButton)
+        
+        profileImageView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 40).isActive = true
+        profileImageView.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 240).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        
+        nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15).isActive = true
+        emailLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor).isActive = true
+        emailLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor).isActive = true
+        emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        memeberSinceLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 15).isActive = true
+        memeberSinceLabel.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        memeberSinceLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        memeberSinceLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        yearLabel.topAnchor.constraint(equalTo: memeberSinceLabel.bottomAnchor, constant: 5).isActive = true
+        yearLabel.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        yearLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        yearLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        logoutButton.bottomAnchor.constraint(equalTo: vinLabel.topAnchor, constant: -40).isActive = true
+        logoutButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        logoutButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        logoutButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        vinLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5).isActive = true
+        vinLabel.leftAnchor.constraint(equalTo: backView.leftAnchor).isActive = true
+        vinLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        vinLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
 }
