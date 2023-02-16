@@ -11,8 +11,13 @@
 import Foundation
 
 struct SignUpModel {
-    let name: String
-    let email: String
-    let verifyEmail: String
-    let vin: String
+    let name: String?
+    let email: String?
+    let vin: String?
+    
+    init(name: String? = nil, email: String? = nil, vin: String? = nil) {
+        self.name = name
+        self.email = email
+        self.vin = vin
+    }
 }
