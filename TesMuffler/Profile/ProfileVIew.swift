@@ -129,7 +129,7 @@ class ProfileView: UIView {
         label.text = "VIN#: 123456789ABC"
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
-        label.backgroundColor = .gray
+//        label.backgroundColor = .gray
         return label
     }()
     
@@ -232,15 +232,14 @@ class ProfileView: UIView {
         yearLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         yearLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        logoutButton.bottomAnchor.constraint(equalTo: vinLabel.topAnchor, constant: -40).isActive = true
-        logoutButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
-        logoutButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        logoutButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        vinLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5).isActive = true
+        vinLabel.bottomAnchor.constraint(equalTo: logoutButton.topAnchor, constant: -50).isActive = true
         vinLabel.leftAnchor.constraint(equalTo: backView.leftAnchor).isActive = true
         vinLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
         vinLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        logoutButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5).isActive = true
+        logoutButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        logoutButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        logoutButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
-    
 }
