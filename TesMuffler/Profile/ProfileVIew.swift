@@ -67,16 +67,18 @@ class ProfileView: UIView {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "me")
-        imageView.layer.cornerRadius = 40
+        imageView.image = UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: UIFont.systemFont(ofSize: 25).pointSize, weight: .regular))?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)
+        imageView.layer.cornerRadius = 80
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Alex"
+        label.text = "User"
         label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
         label.textAlignment = .center
 //        label.backgroundColor = .gray
@@ -209,8 +211,8 @@ class ProfileView: UIView {
         
         profileImageView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 40).isActive = true
         profileImageView.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 240).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 160).isActive = true
         
         nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor).isActive = true
