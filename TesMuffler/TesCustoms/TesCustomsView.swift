@@ -125,7 +125,7 @@ class TesCustomsView: UIView {
         addSubview(idleSliderBar)
         addSubview(idlePercentStatusLabel)
         
-        brandImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 20).isActive = true
+        brandImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 30).isActive = true
         brandImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         brandImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         brandImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
