@@ -61,6 +61,16 @@ class SignUpView: UIView {
         return label
     }()
     
+    let nameErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.textAlignment = .right
+        label.text = "Name missing*"
+        label.isHidden = true
+        return label
+    }()
+    
     let nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -82,11 +92,31 @@ class SignUpView: UIView {
         return textField
     }()
     
+    let emailErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.text = "Invalid Email*"
+        label.textAlignment = .right
+        label.isHidden = true
+        return label
+    }()
+    
     
     let verifyEmailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Verify Email"
+        return label
+    }()
+    
+    let verifyEmailErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.text = "Unverifed Email*"
+        label.textAlignment = .right
+        label.isHidden = true
         return label
     }()
     
@@ -101,6 +131,16 @@ class SignUpView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "VIN"
+        return label
+    }()
+    
+    let vinErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.text = "VIN missing*"
+        label.textAlignment = .right
+        label.isHidden = true
         return label
     }()
     
@@ -184,20 +224,29 @@ class SignUpView: UIView {
     
     private func setConstraints() {
         backView.addSubview(nameLabel)
+        backView.addSubview(nameErrorLabel)
         backView.addSubview(nameTextField)
         backView.addSubview(emailLabel)
+        backView.addSubview(emailErrorLabel)
         backView.addSubview(emailTextField)
         backView.addSubview(verifyEmailLabel)
+        backView.addSubview(verifyEmailErrorLabel)
         backView.addSubview(veryifyEmailTextField)
         backView.addSubview(vinLabel)
+        backView.addSubview(vinErrorLabel)
         backView.addSubview(vinTextField)
         backView.addSubview(howDidYouHearAboutUsButton)
         backView.addSubview(letsRideButton)
         
         nameLabel.topAnchor.constraint(equalTo: backView.topAnchor,constant: 20).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        nameErrorLabel.leftAnchor.constraint(equalTo: nameLabel.rightAnchor, constant: 10).isActive = true
+        nameErrorLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        nameErrorLabel.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        nameErrorLabel.rightAnchor.constraint(equalTo: nameTextField.rightAnchor).isActive = true
         
         nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         nameTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
@@ -206,8 +255,13 @@ class SignUpView: UIView {
         
         emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 20).isActive = true
         emailLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
-        emailLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        emailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        emailErrorLabel.leftAnchor.constraint(equalTo: emailLabel.rightAnchor, constant: 10).isActive = true
+        emailErrorLabel.topAnchor.constraint(equalTo: emailLabel.topAnchor).isActive = true
+        emailErrorLabel.bottomAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
+        emailErrorLabel.rightAnchor.constraint(equalTo: emailTextField.rightAnchor).isActive = true
         
         emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
         emailTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
@@ -216,8 +270,13 @@ class SignUpView: UIView {
         
         verifyEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 20).isActive = true
         verifyEmailLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
-        verifyEmailLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        verifyEmailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         verifyEmailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        verifyEmailErrorLabel.leftAnchor.constraint(equalTo: verifyEmailLabel.rightAnchor, constant: 10).isActive = true
+        verifyEmailErrorLabel.topAnchor.constraint(equalTo: verifyEmailLabel.topAnchor).isActive = true
+        verifyEmailErrorLabel.bottomAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
+        verifyEmailErrorLabel.rightAnchor.constraint(equalTo: veryifyEmailTextField.rightAnchor).isActive = true
         
         veryifyEmailTextField.topAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
         veryifyEmailTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
@@ -226,8 +285,13 @@ class SignUpView: UIView {
         
         vinLabel.topAnchor.constraint(equalTo: veryifyEmailTextField.bottomAnchor,constant: 50).isActive = true
         vinLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
-        vinLabel.rightAnchor.constraint(equalTo: backView.rightAnchor).isActive = true
+        vinLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         vinLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        vinErrorLabel.leftAnchor.constraint(equalTo: vinLabel.rightAnchor, constant: 10).isActive = true
+        vinErrorLabel.topAnchor.constraint(equalTo: vinLabel.topAnchor).isActive = true
+        vinErrorLabel.bottomAnchor.constraint(equalTo: vinLabel.bottomAnchor).isActive = true
+        vinErrorLabel.rightAnchor.constraint(equalTo: vinTextField.rightAnchor).isActive = true
         
         vinTextField.topAnchor.constraint(equalTo: vinLabel.bottomAnchor).isActive = true
         vinTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
@@ -245,32 +309,47 @@ class SignUpView: UIView {
         letsRideButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
     }
     
-    func setUpFieldErrors() {
-        if let name = nameTextField.text, !name.isEmpty {
-            print(name)
+    func setUpFieldErrors(_ completion: @escaping (String, String, String) -> Void) {
+        var hasError = false
+        
+        if nameTextField.text == "" {
+            nameErrorLabel.isHidden = false
+            hasError = true
         } else {
-            print("Something wrong with name")
+            nameErrorLabel.isHidden = true
         }
         
-        if let email = emailTextField.text, !email.isEmpty {
-            print(email)
+        if !isValidEmail(email: emailTextField.text ?? "") {
+                emailErrorLabel.isHidden = false
+                hasError = true
+            } else {
+                emailErrorLabel.isHidden = true
+            }
+        
+        if veryifyEmailTextField.text == "" || veryifyEmailTextField.text != emailTextField.text {
+            verifyEmailErrorLabel.isHidden = false
+            hasError = true
         } else {
-            print("something wrong with email")
+            verifyEmailErrorLabel.isHidden = true
         }
         
-        if let email = emailTextField.text,
-           let verifyEmail = veryifyEmailTextField.text,
-           !verifyEmail.isEmpty,
-           verifyEmail == email {
-            print(email)
+        if vinTextField.text == "" {
+            vinErrorLabel.isHidden = false
+            hasError = true
         } else {
-            print("Email does not match!")
+            vinErrorLabel.isHidden = true
         }
         
-        if let vin = vinTextField.text, !vin.isEmpty {
-            print(vin)
-        } else {
-            print("Something wrong with vin")
+        guard !hasError else {
+            return
         }
+        
+        completion(nameTextField.text ?? "", emailTextField.text ?? "", vinTextField.text ?? "")
+    }
+    
+    private func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
 }

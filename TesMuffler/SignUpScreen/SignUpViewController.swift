@@ -14,9 +14,17 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     private let contentView = SignUpView()
-    private let viewModel = SignUpViewModel(
-        modelController: UserModelController.shared
-    )
+    private var viewModel = SignUpViewModel()
+    private var userModelController: UserModelController
+    
+    init(userModelController: UserModelController) {
+        self.userModelController = userModelController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = contentView
@@ -51,8 +59,11 @@ class SignUpViewController: UIViewController {
     
     @objc
     private func didTapLetsRide() {
-        contentView.setUpFieldErrors()
-//        dismiss(animated: true)
+        contentView.setUpFieldErrors({[weak self] name, email, vin in
+            self?.viewModel.signUpModel = SignUpModel(name: name, email: email, vin: vin)
+            self?.userModelController.domainModel = UserDomainModel(self?.viewModel.signUpModel)
+            self?.dismiss(animated: true)
+        })
     }
     
     @objc
