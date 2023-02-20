@@ -84,7 +84,9 @@ class LoginScreenViewController: UIViewController {
     
     @objc
     private func didTapSignUp() {
-        let signUpScreenVC = SignUpViewController()
+        let signUpScreenVC = SignUpViewController(
+            userModelController: UserModelController.shared
+        )
         signUpScreenVC.modalPresentationStyle = . fullScreen
         present(signUpScreenVC, animated: true)
     }
