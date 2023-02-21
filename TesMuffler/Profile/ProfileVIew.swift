@@ -81,7 +81,7 @@ class ProfileView: UIView {
         label.text = "User"
         label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
         label.textAlignment = .center
-//        label.backgroundColor = .gray
+        label.backgroundColor = .gray
         return label
     }()
     
@@ -91,7 +91,7 @@ class ProfileView: UIView {
         label.text = "email@gmail.com"
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
-//        label.backgroundColor = .gray
+        label.backgroundColor = .gray
         return label
     }()
     
@@ -101,7 +101,7 @@ class ProfileView: UIView {
         label.text = "Memeber Since:"
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
-//        label.backgroundColor = .gray
+        label.backgroundColor = .gray
         return label
     }()
     
@@ -111,7 +111,7 @@ class ProfileView: UIView {
         label.text = "2022"
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
-//        label.backgroundColor = .gray
+        label.backgroundColor = .gray
         return label
     }()
     
@@ -131,7 +131,7 @@ class ProfileView: UIView {
         label.text = "VIN#: 123456789ABC"
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
-//        label.backgroundColor = .gray
+        label.backgroundColor = .gray
         return label
     }()
     
