@@ -2,7 +2,7 @@
  __authors__    = ["Hollis Kwan"]
  __date__       = 2023/02/14
  __deprecated__ = False
- __doc__        = TesCustoms View setup
+ __doc__        = VolumeSettings View setup
  __email__      = "holliskwan.ios@gmail.com"
  __license__    = "MIT"
  __status__     = "Development"
@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class TesCustomsView: UIView {
+class VolumeSettingsView: UIView {
     
     let brandImageView: UIImageView = {
         let imageView = UIImageView()
