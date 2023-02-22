@@ -20,8 +20,8 @@ final class TabBarController: UITabBarController {
     }
     
     private func setControllers() {
-        let tesCustomersVC = TesCustomsViewController()
-        tesCustomersVC.tabBarItem = UITabBarItem(
+        let CarSelectionVC = CarSelectionViewController()
+        CarSelectionVC.tabBarItem = UITabBarItem(
             title: "Connect",
             image: UIImage(systemName: "app.connected.to.app.below.fill"),
             tag: 1)
@@ -31,6 +31,6 @@ final class TabBarController: UITabBarController {
             image: UIImage(systemName: "person.circle"),
             tag: 1)
         
-        self.setViewControllers([tesCustomersVC, profileVC], animated: true)
+        self.setViewControllers([CarSelectionVC, profileVC], animated: true)
     }
 }
