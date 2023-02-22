@@ -14,7 +14,6 @@ import AVFoundation
 class ProfileViewController: UIViewController {
 
     private let contentView = ProfileView()
-
     private var cameraAccessGranted = false
 
     override func loadView() {

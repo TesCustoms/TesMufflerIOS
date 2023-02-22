@@ -1,9 +1,12 @@
-//
-//  UserModelController.swift
-//  TesMuffler
-//
-//  Created by Hollis Kwan on 2/16/23.
-//
+/*
+ __authors__    = ["Hollis Kwan"]
+ __date__       = 2023/02/16
+ __deprecated__ = False
+ __doc__        = Domain Model for setting up users
+ __email__      = "holliskwan.ios@gmail.com"
+ __license__    = "MIT"
+ __status__     = "Development"
+ */
 
 import Foundation
 

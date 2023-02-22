@@ -159,7 +159,7 @@
                                 <state key="normal" title="How did you hear about us?"/>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-OQ-Dgs">
-                                <rect key="frame" x="-6" y="3" width="392" height="44"/>
+                                <rect key="frame" x="-7" y="3" width="391" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Sign Up" id="ktu-i1-RdP"/>
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-OC-KKy">
-                                <rect key="frame" x="-6" y="47" width="388" height="44"/>
+                                <rect key="frame" x="-8" y="47" width="388" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <items>
@@ -431,7 +431,7 @@ support privacy stealing ads!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-0k-Gbx">
-                                <rect key="frame" x="-4" y="3" width="390" height="44"/>
+                                <rect key="frame" x="-6" y="3" width="391" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="ptf-r8-yRB"/>
@@ -515,7 +515,7 @@ support privacy stealing ads!</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yic-ex-edO"/>
+        <segue reference="8Ik-1w-3L4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="app.connected.to.app.below.fill" catalog="system" width="117" height="128"/>
