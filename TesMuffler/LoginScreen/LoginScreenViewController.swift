@@ -9,6 +9,7 @@
  */
 
 import UIKit
+import SwiftUI
 
 class LoginScreenViewController: UIViewController {
     
@@ -87,8 +88,10 @@ class LoginScreenViewController: UIViewController {
         let signUpScreenVC = SignUpViewController(
             userModelController: UserModelController.shared
         )
-        signUpScreenVC.modalPresentationStyle = . fullScreen
-        present(signUpScreenVC, animated: true)
+        let navigationVC = UINavigationController(rootViewController: signUpScreenVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        navigationVC.modalTransitionStyle = .crossDissolve
+        present(navigationVC, animated: true)
     }
     
     @objc
@@ -109,5 +112,23 @@ extension LoginScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+}
+
+
+struct ViewControllerRepresentable: UIViewControllerRepresentable {
+    typealias UIViewControllerType = LoginScreenViewController
+    
+    func updateUIViewController(_ uiViewController: LoginScreenViewController, context: Context) {}
+    
+    func makeUIViewController(context: Context) -> LoginScreenViewController {
+        return LoginScreenViewController()
+    }
+}
+
+struct ViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerRepresentable()
+            .ignoresSafeArea(.all)
     }
 }
