@@ -13,15 +13,6 @@ import UIKit
 
 class SignUpView: UIView {
     
-    let navigationView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGray6
-        view.layer.borderWidth = 0.2
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        return view
-    }()
-    
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,29 +20,11 @@ class SignUpView: UIView {
         return scrollView
     }()
     
-    let backView: UIView = {
+    let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
-    }()
-    
-    let backButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Log In", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.setTitleColor(.link, for: .normal)
-        return button
-    }()
-    
-    let signUpNavLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sign Up"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        return label
     }()
     
     let nameLabel: UILabel = {
@@ -172,7 +145,6 @@ class SignUpView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        navBarSetUp()
         setScrollView()
         setConstraints()
     }
@@ -181,65 +153,43 @@ class SignUpView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func navBarSetUp() {
-        addSubview(navigationView)
-        navigationView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
-        navigationView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        navigationView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        navigationView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        navigationView.addSubview(signUpNavLabel)
-        
-        signUpNavLabel.leftAnchor.constraint(equalTo: navigationView.leftAnchor).isActive = true
-        signUpNavLabel.topAnchor.constraint(equalTo: navigationView.topAnchor)
-            .isActive = true
-        signUpNavLabel.rightAnchor.constraint(equalTo: navigationView.rightAnchor).isActive = true
-        signUpNavLabel.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor).isActive = true
-        
-        navigationView.addSubview(backButton)
-        
-        backButton.centerYAnchor.constraint(equalTo: navigationView.centerYAnchor).isActive = true
-        backButton.leftAnchor.constraint(equalTo: navigationView.leftAnchor, constant: 20).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-    }
-    
     private func setScrollView() {
         addSubview(scrollView)
         
-        scrollView.topAnchor.constraint(equalTo: navigationView.bottomAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
         scrollView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
         
-        scrollView.addSubview(backView)
+        scrollView.addSubview(containerView)
         
-        backView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
-        backView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
-        backView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor).isActive = true
-        backView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor).isActive = true
-        backView.heightAnchor.constraint(equalToConstant: 800).isActive = true
-        backView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        containerView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 800).isActive = true
+        containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         scrollView.contentSize = CGSize(width: .zero, height: 800)
     }
     
     private func setConstraints() {
-        backView.addSubview(nameLabel)
-        backView.addSubview(nameErrorLabel)
-        backView.addSubview(nameTextField)
-        backView.addSubview(emailLabel)
-        backView.addSubview(emailErrorLabel)
-        backView.addSubview(emailTextField)
-        backView.addSubview(verifyEmailLabel)
-        backView.addSubview(verifyEmailErrorLabel)
-        backView.addSubview(veryifyEmailTextField)
-        backView.addSubview(vinLabel)
-        backView.addSubview(vinErrorLabel)
-        backView.addSubview(vinTextField)
-        backView.addSubview(howDidYouHearAboutUsButton)
-        backView.addSubview(letsRideButton)
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(nameErrorLabel)
+        containerView.addSubview(nameTextField)
+        containerView.addSubview(emailLabel)
+        containerView.addSubview(emailErrorLabel)
+        containerView.addSubview(emailTextField)
+        containerView.addSubview(verifyEmailLabel)
+        containerView.addSubview(verifyEmailErrorLabel)
+        containerView.addSubview(veryifyEmailTextField)
+        containerView.addSubview(vinLabel)
+        containerView.addSubview(vinErrorLabel)
+        containerView.addSubview(vinTextField)
+        containerView.addSubview(howDidYouHearAboutUsButton)
+        containerView.addSubview(letsRideButton)
         
-        nameLabel.topAnchor.constraint(equalTo: backView.topAnchor,constant: 20).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor,constant: 20).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -249,12 +199,12 @@ class SignUpView: UIView {
         nameErrorLabel.rightAnchor.constraint(equalTo: nameTextField.rightAnchor).isActive = true
         
         nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        nameTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        nameTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         nameTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         nameTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
         
         emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 20).isActive = true
-        emailLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        emailLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         emailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -264,12 +214,12 @@ class SignUpView: UIView {
         emailErrorLabel.rightAnchor.constraint(equalTo: emailTextField.rightAnchor).isActive = true
         
         emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
-        emailTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        emailTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         emailTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
         
         verifyEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 20).isActive = true
-        verifyEmailLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        verifyEmailLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         verifyEmailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         verifyEmailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -279,12 +229,12 @@ class SignUpView: UIView {
         verifyEmailErrorLabel.rightAnchor.constraint(equalTo: veryifyEmailTextField.rightAnchor).isActive = true
         
         veryifyEmailTextField.topAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
-        veryifyEmailTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        veryifyEmailTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         veryifyEmailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         veryifyEmailTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
         
         vinLabel.topAnchor.constraint(equalTo: veryifyEmailTextField.bottomAnchor,constant: 50).isActive = true
-        vinLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        vinLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         vinLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         vinLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -294,19 +244,19 @@ class SignUpView: UIView {
         vinErrorLabel.rightAnchor.constraint(equalTo: vinTextField.rightAnchor).isActive = true
         
         vinTextField.topAnchor.constraint(equalTo: vinLabel.bottomAnchor).isActive = true
-        vinTextField.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 60).isActive = true
+        vinTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
         vinTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         vinTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
         
         howDidYouHearAboutUsButton.topAnchor.constraint(equalTo: vinTextField.bottomAnchor, constant: 40).isActive = true
-        howDidYouHearAboutUsButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        howDidYouHearAboutUsButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         howDidYouHearAboutUsButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
         howDidYouHearAboutUsButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         letsRideButton.topAnchor.constraint(equalTo: howDidYouHearAboutUsButton.bottomAnchor, constant: 50).isActive = true
         letsRideButton.widthAnchor.constraint(equalToConstant: 125).isActive = true
         letsRideButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        letsRideButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        letsRideButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
     }
     
     func setUpFieldErrors(_ completion: @escaping (String, String, String) -> Void) {

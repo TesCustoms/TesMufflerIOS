@@ -16,6 +16,9 @@
 		58042D31299C061D005273F4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D30299C061D005273F4 /* TabBarController.swift */; };
 		58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D34299C07F6005273F4 /* ProfileViewController.swift */; };
 		58042D37299C0801005273F4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58042D36299C0801005273F4 /* ProfileView.swift */; };
+		580AB75429A7DBA300E791FC /* CustomInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AB75329A7DBA300E791FC /* CustomInfoCell.swift */; };
+		580AB75629A7DFE500E791FC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AB75529A7DFE500E791FC /* ProfileViewModel.swift */; };
+		580AB75829A7E45200E791FC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AB75729A7E45200E791FC /* ProfileModel.swift */; };
 		581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */; };
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
@@ -40,6 +43,9 @@
 		58042D30299C061D005273F4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		58042D34299C07F6005273F4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		58042D36299C0801005273F4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		580AB75329A7DBA300E791FC /* CustomInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoCell.swift; sourceTree = "<group>"; };
+		580AB75529A7DFE500E791FC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		580AB75729A7E45200E791FC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -127,7 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				58042D34299C07F6005273F4 /* ProfileViewController.swift */,
+				580AB75529A7DFE500E791FC /* ProfileViewModel.swift */,
+				580AB75729A7E45200E791FC /* ProfileModel.swift */,
 				58042D36299C0801005273F4 /* ProfileView.swift */,
+				580AB75329A7DBA300E791FC /* CustomInfoCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -266,9 +275,11 @@
 				58BB802529A6A18B003C8A4C /* CarSelectionModel.swift in Sources */,
 				58042D26299BFA3C005273F4 /* SignUpViewController.swift in Sources */,
 				58042D21299BF1B0005273F4 /* LoginScreenView.swift in Sources */,
+				580AB75829A7E45200E791FC /* ProfileModel.swift in Sources */,
 				58BB801F29A69590003C8A4C /* CarSelectionView.swift in Sources */,
 				58042D2D299C0563005273F4 /* VolumeSettingsViewController.swift in Sources */,
 				58042D2F299C058A005273F4 /* VolumeSettingsView.swift in Sources */,
+				580AB75629A7DFE500E791FC /* ProfileViewModel.swift in Sources */,
 				58042D31299C061D005273F4 /* TabBarController.swift in Sources */,
 				581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */,
 				58042D28299BFA65005273F4 /* SignUpView.swift in Sources */,
@@ -277,6 +288,7 @@
 				DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */,
 				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
 				58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */,
+				580AB75429A7DBA300E791FC /* CustomInfoCell.swift in Sources */,
 				DB1D8779291B150100FED633 /* AppDelegate.swift in Sources */,
 				58BB801D29A6958A003C8A4C /* CarSelectionViewController.swift in Sources */,
 				DB1D877B291B150100FED633 /* SceneDelegate.swift in Sources */,

@@ -32,6 +32,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
         setButtonTargets()
         setTextFieldDelegates()
         setGestures()
@@ -50,11 +51,20 @@ class SignUpViewController: UIViewController {
             action: #selector(didTapLetsRide),
             for: .touchUpInside
         )
-        contentView.backButton.addTarget(
-            self,
-            action: #selector(didTapBackButton),
-            for: .touchUpInside
-        )
+    }
+    
+    private func setNavBar() {
+        title = "Sign Up"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(didTapLogIn))
+        navigationController?.navigationBar.backgroundColor = .systemGray6
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemGray6
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    @objc
+    private func didTapLogIn() {
+        dismiss(animated: true)
     }
     
     @objc
@@ -64,11 +74,6 @@ class SignUpViewController: UIViewController {
             self?.userModelController.domainModel = UserDomainModel(self?.viewModel.signUpModel)
             self?.dismiss(animated: true)
         })
-    }
-    
-    @objc
-    private func didTapBackButton() {
-        dismiss(animated: true)
     }
     
     private func setGestures() {
@@ -91,3 +96,4 @@ extension SignUpViewController: UITextFieldDelegate {
         return false
     }
 }
+

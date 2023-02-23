@@ -16,6 +16,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tabBar.barTintColor = .systemGray6
         setControllers()
     }
     
@@ -26,11 +27,12 @@ final class TabBarController: UITabBarController {
             image: UIImage(systemName: "app.connected.to.app.below.fill"),
             tag: 1)
         let profileVC = ProfileViewController()
+        let navigationController = UINavigationController(rootViewController: profileVC)
         profileVC.tabBarItem = UITabBarItem(
             title: "Profile",
             image: UIImage(systemName: "person.circle"),
             tag: 1)
         
-        self.setViewControllers([CarSelectionVC, profileVC], animated: true)
+        self.setViewControllers([CarSelectionVC, navigationController], animated: true)
     }
 }
