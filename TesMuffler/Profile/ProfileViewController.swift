@@ -9,6 +9,7 @@
  */
 
 import UIKit
+import PhotosUI
 import AVFoundation
 
 class ProfileViewController: UIViewController {
@@ -138,16 +139,23 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc private func didTapXButton(_ sender: UIButton) {
         let row = sender.tag
-           viewModel.dummyData[row] = ""
-           contentView.tableView.reloadData()
+        viewModel.dummyData[row] = ""
+        contentView.tableView.reloadData()
     }
- 
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        DispatchQueue.main.async { [unowned self] in
+            let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+            showAccess(for: status)
+        }
+    }
+    
     
     func presentCamera() {
         let picker = UIImagePickerController()
@@ -190,9 +198,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                             }
                         }
                     }
-                case .denied:
-                    self?.showCameraAccessDeniedAlert()
-                case .restricted:
+                case .denied, .restricted:
                     self?.showCameraAccessDeniedAlert()
                 @unknown default:
                     fatalError("An error occurred while checking authorization status.")
@@ -203,10 +209,89 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             title: "Photo Library",
             style: .default,
             handler: { [weak self] _ in
-                self?.presentPhotoLibrary()
+                PHPhotoLibrary.requestAuthorization(for: .readWrite) { [weak self] (status) in
+                    DispatchQueue.main.async {
+                        self?.showAccess(for: status)
+                    }
+                }
             }
         ))
         present(actionSheet, animated: true)
+    }
+    
+    func showAccess(for status: PHAuthorizationStatus) {
+        switch status {
+        case .authorized:
+            self.presentPhotoLibrary()
+            
+        case .limited:
+            self.showLimitedAcced()
+            
+        case .restricted, .denied, .notDetermined:
+            showNotAuthorized()
+        @unknown default:
+            break
+        }
+    }
+    
+    func showLimitedAcced() {
+        let alertController = UIAlertController(
+            title: "",
+            message: "Select more photos or go to Settings to allow access to all photos.",
+            preferredStyle: .actionSheet
+        )
+        
+//        alertController.addAction(openLibraryAction)
+        
+        let selectPhotosAction = UIAlertAction(
+            title: "Select more photos",
+            style: .default) { [unowned self] (_) in
+                PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
+            }
+        alertController.addAction(selectPhotosAction)
+        
+        let allowFullAccessAction = UIAlertAction(
+            title: "Allow access to all photos",
+            style: .default) { [unowned self] (_) in
+                gotoAppPrivacySettings()
+            }
+        alertController.addAction(allowFullAccessAction)
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil
+        )
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNotAuthorized() {
+        let alertController = UIAlertController(title: nil, message: "Please enable photo library access to continue", preferredStyle: .alert)
+        
+        let action = UIAlertAction(
+            title: "Settings",
+            style: .default,
+            handler: { _ in
+            self.gotoAppPrivacySettings()
+        })
+        alertController.addAction(action)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
+    
+    func gotoAppPrivacySettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString),
+              UIApplication.shared.canOpenURL(url) else {
+            assertionFailure("Not able to open App privacy settings")
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

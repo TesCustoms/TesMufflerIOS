@@ -22,6 +22,7 @@
 		581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */; };
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
+		58A031DF29AD297900BAE7AD /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031DE29AD297900BAE7AD /* Preview.swift */; };
 		58BB801D29A6958A003C8A4C /* CarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB801C29A6958A003C8A4C /* CarSelectionViewController.swift */; };
 		58BB801F29A69590003C8A4C /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB801E29A69590003C8A4C /* CarSelectionView.swift */; };
 		58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB802129A69B4D003C8A4C /* CarSelectionCustomCell.swift */; };
@@ -49,6 +50,7 @@
 		581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		58A031DE29AD297900BAE7AD /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		58BB801C29A6958A003C8A4C /* CarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewController.swift; sourceTree = "<group>"; };
 		58BB801E29A69590003C8A4C /* CarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionView.swift; sourceTree = "<group>"; };
 		58BB802129A69B4D003C8A4C /* CarSelectionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionCustomCell.swift; sourceTree = "<group>"; };
@@ -188,8 +190,9 @@
 		DB1D8777291B150100FED633 /* TesMuffler */ = {
 			isa = PBXGroup;
 			children = (
-				58042D24299BFA14005273F4 /* Media */,
+				58A031DE29AD297900BAE7AD /* Preview.swift */,
 				DB1D8786291B150200FED633 /* Info.plist */,
+				58042D24299BFA14005273F4 /* Media */,
 				58BB802029A69AAB003C8A4C /* CarSelection */,
 				581D7DF8299EAB8400FF5790 /* ModelController */,
 				58042D22299BF8A7005273F4 /* Resources */,
@@ -284,6 +287,7 @@
 				581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */,
 				58042D28299BFA65005273F4 /* SignUpView.swift in Sources */,
 				5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */,
+				58A031DF29AD297900BAE7AD /* Preview.swift in Sources */,
 				58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */,
 				DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */,
 				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
