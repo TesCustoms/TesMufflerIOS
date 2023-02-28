@@ -13,14 +13,14 @@ import UIKit
 
 class VolumeSettingsView: UIView {
     
-    let brandImageView: UIImageView = {
+    private let brandImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "logo")
         return imageView
     }()
     
-    let brandTitleLabel: UILabel = {
+    private let brandTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "TesCustoms"
@@ -30,7 +30,7 @@ class VolumeSettingsView: UIView {
         return title
     }()
     
-    let hornTitleLabel: UILabel = {
+    private let hornTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Horn"

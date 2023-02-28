@@ -11,9 +11,9 @@
 import Foundation
 
 struct SignUpModel {
-    let name: String?
-    let email: String?
-    let vin: String?
+    var name: String?
+    var email: String?
+    var vin: String?
     
     init(name: String? = nil, email: String? = nil, vin: String? = nil) {
         self.name = name

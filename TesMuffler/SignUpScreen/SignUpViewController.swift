@@ -32,17 +32,17 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavBar()
-        setButtonTargets()
         setTextFieldDelegates()
+        setButtonTargets()
         setGestures()
+        setNavBar()
     }
     
     private func setTextFieldDelegates() {
-        contentView.emailTextField.delegate = self
-        contentView.vinTextField.delegate = self
-        contentView.nameTextField.delegate = self
         contentView.veryifyEmailTextField.delegate = self
+        contentView.emailTextField.delegate = self
+        contentView.nameTextField.delegate = self
+        contentView.vinTextField.delegate = self
     }
     
     private func setButtonTargets() {
@@ -55,11 +55,24 @@ class SignUpViewController: UIViewController {
     
     private func setNavBar() {
         title = "Sign Up"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(didTapLogIn))
-        navigationController?.navigationBar.backgroundColor = .systemGray6
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemGray6
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Log In",
+            style: .plain,
+            target: self,
+            action: #selector(didTapLogIn)
+        )
+        navigationController?.navigationBar.backgroundColor = .systemGray6
+    }
+    
+    private func setGestures() {
+        let tapDismissKeyboardGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(didTapScreen)
+        )
+        view.addGestureRecognizer(tapDismissKeyboardGesture)
     }
     
     @objc
@@ -69,19 +82,15 @@ class SignUpViewController: UIViewController {
     
     @objc
     private func didTapLetsRide() {
-        contentView.setUpFieldErrors({[weak self] name, email, vin in
-            self?.viewModel.signUpModel = SignUpModel(name: name, email: email, vin: vin)
+        contentView.setUpErrorsHandler { [weak self] name, email, vin in
+            self?.viewModel.signUpModel = SignUpModel(
+                name: name,
+                email: email,
+                vin: vin
+            )
             self?.userModelController.domainModel = UserDomainModel(self?.viewModel.signUpModel)
             self?.dismiss(animated: true)
-        })
-    }
-    
-    private func setGestures() {
-        let tapDismissKeyboardGesture = UITapGestureRecognizer(
-            target: self,
-            action: #selector(didTapScreen)
-        )
-        view.addGestureRecognizer(tapDismissKeyboardGesture)
+        }
     }
     
     @objc

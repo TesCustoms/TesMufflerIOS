@@ -26,7 +26,12 @@ class VolumeSettingsViewController: UIViewController {
     
     private func slideBarTargetSetup() {
         title = nil
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(didTapBack))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Back",
+            style: .plain,
+            target: self,
+            action: #selector(didTapBack)
+        )
         contentView.hornSliderBar.addTarget(
             self,
             action: #selector(didMoveHornSlider),

@@ -13,28 +13,30 @@ import UIKit
 
 class SignUpView: UIView {
     
-    let scrollView: UIScrollView = {
+    //MARK: - ScrollView setup
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .white
         return scrollView
     }()
     
-    let containerView: UIView = {
+    private let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
-    let nameLabel: UILabel = {
+    //MARK: - Labels and Error Labels setup
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Full name"
         return label
     }()
     
-    let nameErrorLabel: UILabel = {
+    private let nameErrorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemRed
@@ -44,28 +46,14 @@ class SignUpView: UIView {
         return label
     }()
     
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
-    
-    let emailLabel: UILabel = {
+    private let emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email"
         return label
     }()
     
-    let emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
-    
-    let emailErrorLabel: UILabel = {
+    private let emailErrorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemRed
@@ -75,15 +63,14 @@ class SignUpView: UIView {
         return label
     }()
     
-    
-    let verifyEmailLabel: UILabel = {
+    private let verifyEmailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Verify Email"
         return label
     }()
     
-    let verifyEmailErrorLabel: UILabel = {
+    private let verifyEmailErrorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemRed
@@ -93,21 +80,14 @@ class SignUpView: UIView {
         return label
     }()
     
-    let veryifyEmailTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
-    
-    let vinLabel: UILabel = {
+    private let vinLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "VIN"
         return label
     }()
     
-    let vinErrorLabel: UILabel = {
+    private let vinErrorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemRed
@@ -117,6 +97,29 @@ class SignUpView: UIView {
         return label
     }()
     
+    //MARK: - TextFields setup
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    
+    let emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    
+    
+    let veryifyEmailTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    
     let vinTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -124,6 +127,7 @@ class SignUpView: UIView {
         return textField
     }()
     
+    //MARK: - Buttons setup
     let howDidYouHearAboutUsButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -259,7 +263,7 @@ class SignUpView: UIView {
         letsRideButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
     }
     
-    func setUpFieldErrors(_ completion: @escaping (String, String, String) -> Void) {
+    func setUpErrorsHandler(_ completion: @escaping (String, String, String) -> Void) {
         var hasError = false
         
         if nameTextField.text == "" {
