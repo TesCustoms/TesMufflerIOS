@@ -21,8 +21,8 @@ class CarSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.tableView.delegate = self
         contentView.tableView.dataSource = self
+        contentView.tableView.delegate = self
     }
     
     @objc

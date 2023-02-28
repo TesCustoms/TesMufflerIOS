@@ -10,11 +10,11 @@ import UIKit
 
 class CarSelectionCustomCell: UITableViewCell {
     
-    static let identifier = String(
-        describing: CarSelectionCustomCell.self
-    )
+    static let identifier = {
+        String(describing: CarSelectionCustomCell.self)
+    }()
     
-    let containerView: UIView = {
+    private let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15
@@ -22,7 +22,7 @@ class CarSelectionCustomCell: UITableViewCell {
         return view
     }()
     
-    let vehicleLabel: UILabel = {
+    private let vehicleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Test"
