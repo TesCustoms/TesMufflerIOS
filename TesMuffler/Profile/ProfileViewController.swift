@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     
     private let contentView = ProfileView()
     private let viewModel = ProfileViewModel()
-    private var cameraAccessGranted = false
+    private var isCameraAccessGranted = false
     private var isPencilTapped = false
     
     override func loadView() {
@@ -38,14 +38,22 @@ class ProfileViewController: UIViewController {
     
     private func navSetUp() {
         title = "Profile"
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "info.square"), style: .plain, target: self, action: #selector(didTapInfo)),
-            UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(didTapPencil))
-        ]
-        navigationController?.navigationBar.barTintColor = .systemGray6
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemGray6
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(
+                image: UIImage(systemName: "info.square"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapInfoButton)),
+            UIBarButtonItem(
+                image: UIImage(systemName: "pencil"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapPencilButton))
+        ]
+        navigationController?.navigationBar.barTintColor = .systemGray6
     }
     
     private func setGestures() {
@@ -54,27 +62,6 @@ class ProfileViewController: UIViewController {
             action: #selector(didTapImage)
         )
         contentView.profileImageView.addGestureRecognizer(profileImageTapGesture)
-    }
-    
-    @objc
-    private func didTapPencil() {
-        isPencilTapped.toggle()
-        contentView.tableView.reloadData()
-    }
-    
-    @objc
-    private func didTapInfo() {
-        
-    }
-    
-    @objc
-    private func didTapImage() {
-        presentPhotoActionSheet()
-    }
-    
-    @objc
-    private func didTapLogout() {
-        dismiss(animated: true)
     }
     
     private func showCameraAccessDeniedAlert() {
@@ -89,8 +76,38 @@ class ProfileViewController: UIViewController {
         })
         present(alert, animated: true)
     }
+    
+    private func presentPickerController(with source: UIImagePickerController.SourceType) {
+        let picker = UIImagePickerController()
+        picker.sourceType = source
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    @objc
+    private func didTapPencilButton() {
+        isPencilTapped.toggle()
+        contentView.tableView.reloadData()
+    }
+    
+    @objc
+    private func didTapInfoButton() {
+        
+    }
+    
+    @objc
+    private func didTapImage() {
+        presentPhotoActionSheet()
+    }
+    
+    @objc
+    private func didTapLogout() {
+        dismiss(animated: true)
+    }
 }
 
+//MARK: - Tableview delegate and datasource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cellTitle.count
@@ -137,40 +154,27 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     @objc private func didTapXButton(_ sender: UIButton) {
         let row = sender.tag
         viewModel.dummyData[row] = ""
         contentView.tableView.reloadData()
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPhotoLibraryChangeObserver {
-    func photoLibraryDidChange(_ changeInstance: PHChange) {
-        DispatchQueue.main.async { [unowned self] in
-            let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
-            showAccess(for: status)
-        }
-    }
+
+//MARK: - Camera and PhotoLibrary setup
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    func presentCamera() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true)
+    private func presentCamera() {
+        presentPickerController(with: .camera)
     }
     
     func presentPhotoLibrary() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true)
+        presentPickerController(with: .photoLibrary)
     }
     
     func presentPhotoActionSheet() {
@@ -209,89 +213,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             title: "Photo Library",
             style: .default,
             handler: { [weak self] _ in
-                PHPhotoLibrary.requestAuthorization(for: .readWrite) { [weak self] (status) in
-                    DispatchQueue.main.async {
-                        self?.showAccess(for: status)
-                    }
-                }
+                self?.presentPhotoLibrary()
             }
         ))
         present(actionSheet, animated: true)
-    }
-    
-    func showAccess(for status: PHAuthorizationStatus) {
-        switch status {
-        case .authorized:
-            self.presentPhotoLibrary()
-            
-        case .limited:
-            self.showLimitedAcced()
-            
-        case .restricted, .denied, .notDetermined:
-            showNotAuthorized()
-        @unknown default:
-            break
-        }
-    }
-    
-    func showLimitedAcced() {
-        let alertController = UIAlertController(
-            title: "",
-            message: "Select more photos or go to Settings to allow access to all photos.",
-            preferredStyle: .actionSheet
-        )
-        
-//        alertController.addAction(openLibraryAction)
-        
-        let selectPhotosAction = UIAlertAction(
-            title: "Select more photos",
-            style: .default) { [unowned self] (_) in
-                PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
-            }
-        alertController.addAction(selectPhotosAction)
-        
-        let allowFullAccessAction = UIAlertAction(
-            title: "Allow access to all photos",
-            style: .default) { [unowned self] (_) in
-                gotoAppPrivacySettings()
-            }
-        alertController.addAction(allowFullAccessAction)
-        
-        let cancelAction = UIAlertAction(
-            title: "Cancel",
-            style: .cancel,
-            handler: nil
-        )
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func showNotAuthorized() {
-        let alertController = UIAlertController(title: nil, message: "Please enable photo library access to continue", preferredStyle: .alert)
-        
-        let action = UIAlertAction(
-            title: "Settings",
-            style: .default,
-            handler: { _ in
-            self.gotoAppPrivacySettings()
-        })
-        alertController.addAction(action)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true)
-    }
-    
-    func gotoAppPrivacySettings() {
-        guard let url = URL(string: UIApplication.openSettingsURLString),
-              UIApplication.shared.canOpenURL(url) else {
-            assertionFailure("Not able to open App privacy settings")
-            return
-        }
-        
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
