@@ -59,6 +59,11 @@ class LoginScreenViewController: UIViewController {
         )
     }
     
+    private func setGestures() {
+        let tapDismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(didTapScreen))
+        view.addGestureRecognizer(tapDismissKeyboardGesture)
+    }
+    
     @objc private func keyboardWillShow() {
         if !keyboardIsShown {
             contentView.backViewTopConstraint?.constant -= 120
@@ -71,11 +76,6 @@ class LoginScreenViewController: UIViewController {
             contentView.backViewTopConstraint?.constant += 120
             keyboardIsShown = false
         }
-    }
-    
-    private func setGestures() {
-        let tapDismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(didTapScreen))
-        view.addGestureRecognizer(tapDismissKeyboardGesture)
     }
     
     @objc
@@ -96,9 +96,20 @@ class LoginScreenViewController: UIViewController {
     
     @objc
     private func didTapEnter() {
-        guard let email = contentView.emailTextField.text, let password = contentView.passwordTextField.text, !email.isEmpty, !password.isEmpty else {
-            let alertController = UIAlertController(title: "Invalid login", message: "Please enter a valid email/password", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Okay", style: .default))
+        guard let email = contentView.emailTextField.text,
+              let password = contentView.passwordTextField.text,
+              !email.isEmpty,
+              !password.isEmpty
+        else {
+            let alertController = UIAlertController(
+                title: "Invalid login",
+                message: "Please enter a valid email/password",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(
+                title: "Okay",
+                style: .default
+            ))
             present(alertController, animated: true)
             return
         }

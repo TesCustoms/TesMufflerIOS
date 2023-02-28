@@ -15,14 +15,14 @@ class LoginScreenView: UIView {
     
     var backViewTopConstraint: NSLayoutConstraint?
     
-    let backView: UIView = {
+    private let backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
-    let brandTitleLabel: UILabel = {
+    private let brandTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "TesCustoms"
@@ -32,14 +32,14 @@ class LoginScreenView: UIView {
         return title
     }()
     
-    let brandImageView: UIImageView = {
+    private let brandImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "logo")
         return imageView
     }()
     
-    let logInTitleLabel: UILabel = {
+    private let logInTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Log In"
