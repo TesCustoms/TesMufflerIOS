@@ -23,6 +23,11 @@
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
 		58A031DF29AD297900BAE7AD /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031DE29AD297900BAE7AD /* Preview.swift */; };
+		58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */; };
+		58A031EB29AFFAFE00BAE7AD /* SettingsDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031EA29AFFAFE00BAE7AD /* SettingsDomainModel.swift */; };
+		58A031ED29AFFB0A00BAE7AD /* SettingsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031EC29AFFB0A00BAE7AD /* SettingsModelController.swift */; };
+		58A031F029AFFBD100BAE7AD /* VolumeSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031EF29AFFBD100BAE7AD /* VolumeSettingsViewModel.swift */; };
+		58A031F229AFFBD800BAE7AD /* VolumeSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031F129AFFBD800BAE7AD /* VolumeSettingsModel.swift */; };
 		58BB801D29A6958A003C8A4C /* CarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB801C29A6958A003C8A4C /* CarSelectionViewController.swift */; };
 		58BB801F29A69590003C8A4C /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB801E29A69590003C8A4C /* CarSelectionView.swift */; };
 		58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BB802129A69B4D003C8A4C /* CarSelectionCustomCell.swift */; };
@@ -50,6 +55,11 @@
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		58A031DE29AD297900BAE7AD /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewModel.swift; sourceTree = "<group>"; };
+		58A031EA29AFFAFE00BAE7AD /* SettingsDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDomainModel.swift; sourceTree = "<group>"; };
+		58A031EC29AFFB0A00BAE7AD /* SettingsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelController.swift; sourceTree = "<group>"; };
+		58A031EF29AFFBD100BAE7AD /* VolumeSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingsViewModel.swift; sourceTree = "<group>"; };
+		58A031F129AFFBD800BAE7AD /* VolumeSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingsModel.swift; sourceTree = "<group>"; };
 		58BB801C29A6958A003C8A4C /* CarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewController.swift; sourceTree = "<group>"; };
 		58BB801E29A69590003C8A4C /* CarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionView.swift; sourceTree = "<group>"; };
 		58BB802129A69B4D003C8A4C /* CarSelectionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionCustomCell.swift; sourceTree = "<group>"; };
@@ -117,6 +127,8 @@
 			children = (
 				58042D2C299C0563005273F4 /* VolumeSettingsViewController.swift */,
 				58042D2E299C058A005273F4 /* VolumeSettingsView.swift */,
+				58A031EF29AFFBD100BAE7AD /* VolumeSettingsViewModel.swift */,
+				58A031F129AFFBD800BAE7AD /* VolumeSettingsModel.swift */,
 			);
 			path = VolumeSettings;
 			sourceTree = "<group>";
@@ -143,8 +155,8 @@
 		581D7DF8299EAB8400FF5790 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */,
-				581D7DF9299EAB9B00FF5790 /* UserModelController.swift */,
+				58A031E729AFFA5F00BAE7AD /* User */,
+				58A031EE29AFFB0E00BAE7AD /* Settings */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -158,10 +170,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		58A031E729AFFA5F00BAE7AD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */,
+				581D7DF9299EAB9B00FF5790 /* UserModelController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		58A031EE29AFFB0E00BAE7AD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				58A031EA29AFFAFE00BAE7AD /* SettingsDomainModel.swift */,
+				58A031EC29AFFB0A00BAE7AD /* SettingsModelController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		58BB802029A69AAB003C8A4C /* CarSelection */ = {
 			isa = PBXGroup;
 			children = (
 				58BB801C29A6958A003C8A4C /* CarSelectionViewController.swift */,
+				58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */,
 				58BB802329A69B6C003C8A4C /* Views */,
 			);
 			path = CarSelection;
@@ -281,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58042D26299BFA3C005273F4 /* SignUpViewController.swift in Sources */,
+				58A031F029AFFBD100BAE7AD /* VolumeSettingsViewModel.swift in Sources */,
 				58042D21299BF1B0005273F4 /* LoginScreenView.swift in Sources */,
 				580AB75829A7E45200E791FC /* ProfileModel.swift in Sources */,
 				58BB801F29A69590003C8A4C /* CarSelectionView.swift in Sources */,
@@ -294,13 +326,17 @@
 				58A031DF29AD297900BAE7AD /* Preview.swift in Sources */,
 				58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */,
 				DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */,
+				58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */,
 				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
 				58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */,
 				580AB75429A7DBA300E791FC /* CustomInfoCell.swift in Sources */,
+				58A031ED29AFFB0A00BAE7AD /* SettingsModelController.swift in Sources */,
+				58A031F229AFFBD800BAE7AD /* VolumeSettingsModel.swift in Sources */,
 				DB1D8779291B150100FED633 /* AppDelegate.swift in Sources */,
 				58BB801D29A6958A003C8A4C /* CarSelectionViewController.swift in Sources */,
 				DB1D877B291B150100FED633 /* SceneDelegate.swift in Sources */,
 				58042D2B299C04F5005273F4 /* SignUpModel.swift in Sources */,
+				58A031EB29AFFAFE00BAE7AD /* SettingsDomainModel.swift in Sources */,
 				581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

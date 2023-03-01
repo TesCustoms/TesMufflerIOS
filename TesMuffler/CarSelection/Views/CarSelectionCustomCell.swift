@@ -25,7 +25,6 @@ class CarSelectionCustomCell: UITableViewCell {
     private let vehicleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Test"
         return label
     }()
     
@@ -63,17 +62,20 @@ class CarSelectionCustomCell: UITableViewCell {
         containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         
         containerView.addSubview(vehicleLabel)
+        containerView.addSubview(settingsButton)
         
-        vehicleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 50).isActive = true
+        vehicleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 30).isActive = true
         vehicleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         vehicleLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        vehicleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        containerView.addSubview(settingsButton)
+        vehicleLabel.rightAnchor.constraint(equalTo: settingsButton.leftAnchor).isActive = true
         
         settingsButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -15).isActive = true
         settingsButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         settingsButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
         settingsButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
+    func setVehicleLabels(with text: String) {
+        vehicleLabel.text = text
     }
 }
