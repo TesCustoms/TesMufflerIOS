@@ -14,6 +14,17 @@ import UIKit
 class VolumeSettingsViewController: UIViewController {
     
     private let contentView = VolumeSettingsView()
+    private let viewModel = VolumeSettingsViewModel()
+    private var settingsModelController: SettingsModelController
+    
+    init(settingsModelController: SettingsModelController) {
+        self.settingsModelController = settingsModelController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = contentView
@@ -22,6 +33,16 @@ class VolumeSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         slideBarTargetSetup()
+        setUpModelData()
+    }
+    
+    private func setUpModelData() {
+        viewModel.setUpSettingsModel(
+            with: settingsModelController.domainModel.title ?? ""
+        )
+        contentView.setVehicleTitle(
+            with: viewModel.volumeSettingsModel.title ?? ""
+        )
     }
     
     private func slideBarTargetSetup() {

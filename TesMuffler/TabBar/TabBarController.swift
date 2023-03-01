@@ -21,7 +21,9 @@ final class TabBarController: UITabBarController {
     }
     
     private func setControllers() {
-        let CarSelectionVC = CarSelectionViewController()
+        let CarSelectionVC = CarSelectionViewController(
+            settingsModelController: SettingsModelController.shared
+        )
         CarSelectionVC.tabBarItem = UITabBarItem(
             title: "Connect",
             image: UIImage(systemName: "app.connected.to.app.below.fill"),
