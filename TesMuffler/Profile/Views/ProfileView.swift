@@ -112,7 +112,7 @@ class ProfileView: UIView {
         
         tableView.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 30).isActive = true
         tableView.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 10).isActive = true
-        tableView.rightAnchor.constraint(equalTo: backView.rightAnchor, constant: -10).isActive = true
+        tableView.rightAnchor.constraint(equalTo: backView.rightAnchor, constant: -25).isActive = true
         tableView.bottomAnchor.constraint(equalTo: logoutButton.topAnchor, constant: -20).isActive = true
         
         logoutButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5).isActive = true
