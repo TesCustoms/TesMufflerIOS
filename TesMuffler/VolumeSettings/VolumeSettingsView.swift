@@ -102,15 +102,6 @@ class VolumeSettingsView: UIView {
         return label
     }()
     
-    let vehicleTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30, weight: .medium)
-        label.text = "Test"
-        label.textAlignment = .center
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -125,7 +116,6 @@ class VolumeSettingsView: UIView {
         addSubview(brandImageView)
         addSubview(brandTitleLabel)
         addSubview(hornTitleLabel)
-        addSubview(vehicleTitleLabel)
         addSubview(hornSliderBar)
         addSubview(hornPercentStatusLabel)
         addSubview(acceleratorTitleLabel)
@@ -137,20 +127,15 @@ class VolumeSettingsView: UIView {
         
         brandImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 30).isActive = true
         brandImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        brandImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        brandImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        brandImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        brandImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         brandTitleLabel.topAnchor.constraint(equalTo: brandImageView.bottomAnchor, constant: 5).isActive = true
         brandTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         brandTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         brandTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        vehicleTitleLabel.bottomAnchor.constraint(equalTo: hornTitleLabel.topAnchor, constant: -25).isActive = true
-        vehicleTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        vehicleTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        vehicleTitleLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        
-        hornTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        hornTitleLabel.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor,constant: 20).isActive = true
         hornTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 30).isActive = true
         hornTitleLabel.widthAnchor.constraint(equalToConstant: 250).isActive = true
         hornTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -194,10 +179,6 @@ class VolumeSettingsView: UIView {
         idlePercentStatusLabel.leftAnchor.constraint(equalTo: idleSliderBar.rightAnchor, constant: 30).isActive = true
         idlePercentStatusLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         idlePercentStatusLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-    }
-    
-    func setVehicleTitle(with text: String) {
-        vehicleTitleLabel.text = text
     }
     
     func updateHornPercentage() {

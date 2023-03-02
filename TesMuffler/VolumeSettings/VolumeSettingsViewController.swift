@@ -34,25 +34,30 @@ class VolumeSettingsViewController: UIViewController {
         super.viewDidLoad()
         slideBarTargetSetup()
         setUpModelData()
+        setNavBar()
     }
     
     private func setUpModelData() {
         viewModel.setUpSettingsModel(
             with: settingsModelController.domainModel.title ?? ""
         )
-        contentView.setVehicleTitle(
-            with: viewModel.volumeSettingsModel.title ?? ""
-        )
     }
     
-    private func slideBarTargetSetup() {
-        title = nil
+    private func setNavBar() {
+        title = viewModel.volumeSettingsModel.title ?? ""
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemGray6
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Back",
             style: .plain,
             target: self,
             action: #selector(didTapBack)
         )
+    }
+    
+    private func slideBarTargetSetup() {
+        
         contentView.hornSliderBar.addTarget(
             self,
             action: #selector(didMoveHornSlider),
