@@ -66,21 +66,30 @@ class LoginScreenViewController: UIViewController {
     
     @objc private func keyboardWillShow() {
         if !keyboardIsShown {
-            contentView.backViewTopConstraint?.constant -= 120
-            keyboardIsShown = true
+            UIView.animate(withDuration: 1) {
+                self.contentView.backViewTopConstraint?.constant -= 120
+                self.keyboardIsShown = true
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     @objc private func keyboardWillHide() {
         if keyboardIsShown {
-            contentView.backViewTopConstraint?.constant += 120
-            keyboardIsShown = false
+            UIView.animate(withDuration: 1) {
+                self.contentView.backViewTopConstraint?.constant += 120
+                self.keyboardIsShown = false
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     @objc
     private func didTapScreen() {
-        view.endEditing(true)
+        UIView.animate(withDuration: 0.4) {
+            self.view.endEditing(true)
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc

@@ -71,7 +71,7 @@ class LoginScreenView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Enter", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = .link
+        button.backgroundColor = UIColor(cgColor:  CGColor(red: 167/255, green: 5/255, blue: 23/255, alpha: 1.0))
         button.layer.cornerRadius = 5
         return button
     }()
@@ -80,7 +80,7 @@ class LoginScreenView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(UIColor.link, for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
     
@@ -136,12 +136,12 @@ class LoginScreenView: UIView {
         passwordTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
         passwordTextField.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
         
-        enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20).isActive = true
+        enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 25).isActive = true
         enterButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         enterButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         enterButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
         
-        signUpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 40).isActive = true
+        signUpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 20).isActive = true
         signUpButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         signUpButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
