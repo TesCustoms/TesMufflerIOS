@@ -32,7 +32,7 @@ class SignUpView: UIView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Full name"
+        label.text = "Full Name"
         return label
     }()
     
@@ -140,7 +140,7 @@ class SignUpView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Let's Ride!", for: .normal)
-        button.backgroundColor = .link
+        button.backgroundColor = UIColor(cgColor:  CGColor(red: 167/255, green: 5/255, blue: 23/255, alpha: 1.0))
         button.layer.cornerRadius = 5
         button.setTitleColor(UIColor.white, for: .normal)
         return button
@@ -193,64 +193,64 @@ class SignUpView: UIView {
         containerView.addSubview(letsRideButton)
         
         nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor,constant: 20).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: nameTextField.leftAnchor).isActive = true
         nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        verifyEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 20).isActive = true
+        verifyEmailLabel.leftAnchor.constraint(equalTo: veryifyEmailTextField.leftAnchor).isActive = true
+        verifyEmailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        verifyEmailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 20).isActive = true
+        emailLabel.leftAnchor.constraint(equalTo: emailTextField.leftAnchor).isActive = true
+        emailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        vinLabel.topAnchor.constraint(equalTo: veryifyEmailTextField.bottomAnchor,constant: 50).isActive = true
+        vinLabel.leftAnchor.constraint(equalTo: vinTextField.leftAnchor).isActive = true
+        vinLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        vinLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         nameErrorLabel.leftAnchor.constraint(equalTo: nameLabel.rightAnchor, constant: 10).isActive = true
         nameErrorLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
         nameErrorLabel.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         nameErrorLabel.rightAnchor.constraint(equalTo: nameTextField.rightAnchor).isActive = true
         
-        nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        nameTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        nameTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        nameTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
-        
-        emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 20).isActive = true
-        emailLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        emailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        emailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
         emailErrorLabel.leftAnchor.constraint(equalTo: emailLabel.rightAnchor, constant: 10).isActive = true
         emailErrorLabel.topAnchor.constraint(equalTo: emailLabel.topAnchor).isActive = true
         emailErrorLabel.bottomAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
         emailErrorLabel.rightAnchor.constraint(equalTo: emailTextField.rightAnchor).isActive = true
-        
-        emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
-        emailTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        emailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        emailTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
-        
-        verifyEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 20).isActive = true
-        verifyEmailLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        verifyEmailLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        verifyEmailLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         verifyEmailErrorLabel.leftAnchor.constraint(equalTo: verifyEmailLabel.rightAnchor, constant: 10).isActive = true
         verifyEmailErrorLabel.topAnchor.constraint(equalTo: verifyEmailLabel.topAnchor).isActive = true
         verifyEmailErrorLabel.bottomAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
         verifyEmailErrorLabel.rightAnchor.constraint(equalTo: veryifyEmailTextField.rightAnchor).isActive = true
         
-        veryifyEmailTextField.topAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
-        veryifyEmailTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        veryifyEmailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        veryifyEmailTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
-        
-        vinLabel.topAnchor.constraint(equalTo: veryifyEmailTextField.bottomAnchor,constant: 50).isActive = true
-        vinLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
-        vinLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        vinLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
         vinErrorLabel.leftAnchor.constraint(equalTo: vinLabel.rightAnchor, constant: 10).isActive = true
         vinErrorLabel.topAnchor.constraint(equalTo: vinLabel.topAnchor).isActive = true
         vinErrorLabel.bottomAnchor.constraint(equalTo: vinLabel.bottomAnchor).isActive = true
         vinErrorLabel.rightAnchor.constraint(equalTo: vinTextField.rightAnchor).isActive = true
         
+        nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        nameTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        nameTextField.widthAnchor.constraint(equalToConstant: 280).isActive = true
+     
+        emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
+        emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        emailTextField.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        
+        veryifyEmailTextField.topAnchor.constraint(equalTo: verifyEmailLabel.bottomAnchor).isActive = true
+        veryifyEmailTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        veryifyEmailTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        veryifyEmailTextField.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        
         vinTextField.topAnchor.constraint(equalTo: vinLabel.bottomAnchor).isActive = true
-        vinTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 60).isActive = true
+        vinTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         vinTextField.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        vinTextField.widthAnchor.constraint(equalToConstant: 270).isActive = true
+        vinTextField.widthAnchor.constraint(equalToConstant: 280).isActive = true
         
         howDidYouHearAboutUsButton.topAnchor.constraint(equalTo: vinTextField.bottomAnchor, constant: 40).isActive = true
         howDidYouHearAboutUsButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
