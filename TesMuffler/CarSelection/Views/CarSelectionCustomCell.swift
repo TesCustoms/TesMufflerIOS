@@ -18,13 +18,22 @@ class CarSelectionCustomCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15
-        view.backgroundColor = .gray
+        view.backgroundColor = .gray.withAlphaComponent(0.5)
+        view.layer.borderWidth = 0.2
         return view
+    }()
+    
+    let carImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     private let vehicleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
     
@@ -62,9 +71,15 @@ class CarSelectionCustomCell: UITableViewCell {
         containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         
         containerView.addSubview(vehicleLabel)
+        containerView.addSubview(carImageView)
         containerView.addSubview(settingsButton)
         
-        vehicleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 30).isActive = true
+        carImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+        carImageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        carImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        carImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        vehicleLabel.leftAnchor.constraint(equalTo: carImageView.rightAnchor, constant: 20).isActive = true
         vehicleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         vehicleLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
         vehicleLabel.rightAnchor.constraint(equalTo: settingsButton.leftAnchor).isActive = true
@@ -77,5 +92,9 @@ class CarSelectionCustomCell: UITableViewCell {
     
     func setVehicleLabels(with text: String) {
         vehicleLabel.text = text
+    }
+    
+    func setVehicleImage(with image: UIImage) {
+        carImageView.image = image
     }
 }

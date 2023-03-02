@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CarSelectionViewModel {
     
@@ -19,4 +20,13 @@ class CarSelectionViewModel {
     "MERCEDES AMG S63"
     ]
     
+    var carImages: [UIImage?] = [
+        UIImage(named: "DodgeRamTRX"),
+        UIImage(named: "MercedesG63"),
+        UIImage(named: "BMWX6"),
+        UIImage(named: "PorschePanamera"),
+        UIImage(named: "AudiRS7"),
+        UIImage(named: "c7vette"),
+        UIImage(named: "MERCEDESS63")
+    ]
 }

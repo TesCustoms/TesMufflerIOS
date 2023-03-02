@@ -66,6 +66,7 @@ extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CarSelectionCustomCell.identifier, for: indexPath) as? CarSelectionCustomCell else { return UITableViewCell() }
         cell.setVehicleLabels(with: viewModel.dummyData[indexPath.row])
+        cell.setVehicleImage(with: viewModel.carImages[indexPath.row] ?? UIImage())
         cell.settingsButton.tag = indexPath.row
         cell.settingsButton.addTarget(
             self,
