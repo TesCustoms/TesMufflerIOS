@@ -21,6 +21,7 @@
 		580AB75829A7E45200E791FC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AB75729A7E45200E791FC /* ProfileModel.swift */; };
 		581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */; };
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
+		5843AF0F29B670C700BBFCE9 /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
 		58A031DF29AD297900BAE7AD /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031DE29AD297900BAE7AD /* Preview.swift */; };
 		58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */; };
@@ -53,6 +54,7 @@
 		580AB75729A7E45200E791FC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
+		5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		58A031DE29AD297900BAE7AD /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewModel.swift; sourceTree = "<group>"; };
@@ -161,11 +163,27 @@
 			path = ModelController;
 			sourceTree = "<group>";
 		};
+		5843AF1029B676D200BBFCE9 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		5843AF1129B67D5800BBFCE9 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				580AB75329A7DBA300E791FC /* CustomInfoCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		58A031E429AE7BAC00BAE7AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				58042D36299C0801005273F4 /* ProfileView.swift */,
-				580AB75329A7DBA300E791FC /* CustomInfoCell.swift */,
+				5843AF1129B67D5800BBFCE9 /* CustomCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +221,7 @@
 			children = (
 				58BB801E29A69590003C8A4C /* CarSelectionView.swift */,
 				58BB802129A69B4D003C8A4C /* CarSelectionCustomCell.swift */,
+				5843AF1029B676D200BBFCE9 /* CustomView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,6 +355,7 @@
 				58BB801D29A6958A003C8A4C /* CarSelectionViewController.swift in Sources */,
 				DB1D877B291B150100FED633 /* SceneDelegate.swift in Sources */,
 				58042D2B299C04F5005273F4 /* SignUpModel.swift in Sources */,
+				5843AF0F29B670C700BBFCE9 /* SoundPlayerView.swift in Sources */,
 				58A031EB29AFFAFE00BAE7AD /* SettingsDomainModel.swift in Sources */,
 				581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */,
 			);
@@ -492,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example..TesMuffler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -526,7 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example..TesMuffler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

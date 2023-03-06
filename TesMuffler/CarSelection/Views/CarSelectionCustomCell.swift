@@ -14,7 +14,7 @@ class CarSelectionCustomCell: UITableViewCell {
         String(describing: CarSelectionCustomCell.self)
     }()
     
-    private let containerView: UIView = {
+    var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15

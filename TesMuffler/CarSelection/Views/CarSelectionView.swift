@@ -13,6 +13,8 @@ import UIKit
 
 class CarSelectionView: UIView {
     
+    let playerView = SoundPlayerView()
+    
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,9 +37,15 @@ class CarSelectionView: UIView {
     }
     
     private func setConstraints() {
+        addSubview(playerView)
         addSubview(tableView)
         
-        tableView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 10).isActive = true
+        playerView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 10).isActive = true
+        playerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        playerView.rightAnchor.constraint(equalTo: rightAnchor,constant:  -20).isActive = true
+        playerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        tableView.topAnchor.constraint(equalTo: playerView.bottomAnchor, constant: 10).isActive = true
         tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
