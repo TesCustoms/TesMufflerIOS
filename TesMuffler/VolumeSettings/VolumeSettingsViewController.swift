@@ -41,10 +41,11 @@ class VolumeSettingsViewController: UIViewController {
         viewModel.setUpSettingsModel(
             with: settingsModelController.domainModel.title ?? ""
         )
+        contentView.brandTitleLabel.text = viewModel.volumeSettingsModel.title
     }
     
     private func setNavBar() {
-        title = viewModel.volumeSettingsModel.title ?? ""
+        title = "Volume Controls"
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemGray6
         navigationController?.navigationBar.scrollEdgeAppearance = appearance

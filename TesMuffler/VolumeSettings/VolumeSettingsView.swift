@@ -20,7 +20,7 @@ class VolumeSettingsView: UIView {
         return imageView
     }()
     
-    private let brandTitleLabel: UILabel = {
+    var brandTitleLabel: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "TesCustoms"
@@ -135,7 +135,7 @@ class VolumeSettingsView: UIView {
         brandTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         brandTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        hornTitleLabel.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor,constant: 20).isActive = true
+        hornTitleLabel.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor,constant: 40).isActive = true
         hornTitleLabel.leftAnchor.constraint(equalTo: leftAnchor,constant: 30).isActive = true
         hornTitleLabel.widthAnchor.constraint(equalToConstant: 250).isActive = true
         hornTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
