@@ -22,6 +22,7 @@
 		581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */; };
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
 		5843AF0F29B670C700BBFCE9 /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */; };
+		5843AF3F29B7A81900BBFCE9 /* AudioBarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843AF3E29B7A81900BBFCE9 /* AudioBarsView.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
 		58A031DF29AD297900BAE7AD /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031DE29AD297900BAE7AD /* Preview.swift */; };
 		58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */; };
@@ -55,6 +56,7 @@
 		581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
+		5843AF3E29B7A81900BBFCE9 /* AudioBarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBarsView.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		58A031DE29AD297900BAE7AD /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */,
+				5843AF3E29B7A81900BBFCE9 /* AudioBarsView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				58042D35299C07F6005273F4 /* ProfileViewController.swift in Sources */,
 				DB1D877D291B150100FED633 /* LoginScreenViewController.swift in Sources */,
 				58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */,
+				5843AF3F29B7A81900BBFCE9 /* AudioBarsView.swift in Sources */,
 				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
 				58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */,
 				580AB75429A7DBA300E791FC /* CustomInfoCell.swift in Sources */,
