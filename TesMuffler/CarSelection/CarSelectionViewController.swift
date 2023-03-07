@@ -13,11 +13,10 @@ import UIKit
 
 class CarSelectionViewController: UIViewController {
     
-    private var cellIndex = Int()
-    
-    private let contentView = CarSelectionView()
-    private let viewModel = CarSelectionViewModel()
     private let settingsModelController: SettingsModelController
+    private let viewModel = CarSelectionViewModel()
+    private let contentView = CarSelectionView()
+    private var cellIndex = Int()
     
     init(settingsModelController: SettingsModelController) {
         self.settingsModelController = settingsModelController
@@ -36,6 +35,24 @@ class CarSelectionViewController: UIViewController {
         super.viewDidLoad()
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        contentView.soundPlayerView.playButton.addTarget(
+            self,
+            action: #selector(didTapPlay),
+            for: .touchUpInside
+        )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    @objc
+    private func didTapPlay() {
+        self.contentView.soundPlayerView.audioBarsView.stopAnimating()
+        self.contentView.soundPlayerView.setRestartButton()
+        contentView.soundPlayerView.audioBarsView.startAnimating { [weak self] in
+            self?.contentView.soundPlayerView.setPlayButton()
+        }
     }
     
     @objc
@@ -77,6 +94,12 @@ extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        contentView.soundPlayerView.carTitleLabel.text = viewModel.dummyData[indexPath.row]
+        self.contentView.soundPlayerView.audioBarsView.stopAnimating()
+        self.contentView.soundPlayerView.setRestartButton()
+        contentView.soundPlayerView.audioBarsView.startAnimating { [weak self] in
+            self?.contentView.soundPlayerView.setPlayButton()
+        }
     }
 }
+

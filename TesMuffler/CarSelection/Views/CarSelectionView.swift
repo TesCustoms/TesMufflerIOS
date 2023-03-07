@@ -13,7 +13,7 @@ import UIKit
 
 class CarSelectionView: UIView {
     
-    let playerView = SoundPlayerView()
+    let soundPlayerView = SoundPlayerView()
     
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -37,15 +37,15 @@ class CarSelectionView: UIView {
     }
     
     private func setConstraints() {
-        addSubview(playerView)
+        addSubview(soundPlayerView)
         addSubview(tableView)
         
-        playerView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 10).isActive = true
-        playerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        playerView.rightAnchor.constraint(equalTo: rightAnchor,constant:  -20).isActive = true
-        playerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        soundPlayerView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 10).isActive = true
+        soundPlayerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        soundPlayerView.rightAnchor.constraint(equalTo: rightAnchor,constant:  -10).isActive = true
+        soundPlayerView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
-        tableView.topAnchor.constraint(equalTo: playerView.bottomAnchor, constant: 10).isActive = true
+        tableView.topAnchor.constraint(equalTo: soundPlayerView.bottomAnchor, constant: 10).isActive = true
         tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
