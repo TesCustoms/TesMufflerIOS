@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct SettingsDomainModel {
     var title: String?
+    var photo: UIImage?
     
-    init(_ title: String? = nil) {
+    init(_ title: String? = nil, _ photo: UIImage? = nil) {
         self.title = title
+        self.photo = photo
     }
 }

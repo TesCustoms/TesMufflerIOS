@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SettingsModelController {
     static let shared = SettingsModelController()
@@ -13,8 +14,7 @@ class SettingsModelController {
     
     var domainModel = SettingsDomainModel()
     
-    func setDomainData(with title: String) {
-        self.domainModel = SettingsDomainModel(title)
+    func setDomainData(with title: String, and photo: UIImage) {
+        self.domainModel = SettingsDomainModel(title, photo)
     }
-    
 }

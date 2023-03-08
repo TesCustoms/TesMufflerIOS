@@ -13,10 +13,10 @@ import UIKit
 
 class VolumeSettingsView: UIView {
     
-    private let brandImageView: UIImageView = {
+    var brandImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -127,10 +127,11 @@ class VolumeSettingsView: UIView {
         
         brandImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 30).isActive = true
         brandImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        brandImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        brandImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        brandImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        brandImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        brandImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        brandTitleLabel.topAnchor.constraint(equalTo: brandImageView.bottomAnchor, constant: 5).isActive = true
+        brandTitleLabel.topAnchor.constraint(equalTo: brandImageView.bottomAnchor, constant: -30).isActive = true
         brandTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         brandTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         brandTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true

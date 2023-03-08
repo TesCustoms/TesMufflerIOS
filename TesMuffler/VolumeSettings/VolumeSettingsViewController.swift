@@ -39,9 +39,10 @@ class VolumeSettingsViewController: UIViewController {
     
     private func setUpModelData() {
         viewModel.setUpSettingsModel(
-            with: settingsModelController.domainModel.title ?? ""
+            with: settingsModelController.domainModel.title ?? "", and: settingsModelController.domainModel.photo ?? UIImage()
         )
         contentView.brandTitleLabel.text = viewModel.volumeSettingsModel.title
+        contentView.brandImageView.image = viewModel.volumeSettingsModel.photo
     }
     
     private func setNavBar() {

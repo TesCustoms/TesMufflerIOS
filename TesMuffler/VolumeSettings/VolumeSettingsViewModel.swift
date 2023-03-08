@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 class VolumeSettingsViewModel {
     
     var volumeSettingsModel = VolumeSettingsModel()
     
-    func setUpSettingsModel(with title: String) {
-        self.volumeSettingsModel = VolumeSettingsModel(title)
+    func setUpSettingsModel(with title: String, and photo: UIImage) {
+        self.volumeSettingsModel = VolumeSettingsModel(title, photo)
     }
 }
