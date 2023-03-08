@@ -58,6 +58,10 @@ class CarSelectionCustomCell: UITableViewCell {
         setConstraints()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

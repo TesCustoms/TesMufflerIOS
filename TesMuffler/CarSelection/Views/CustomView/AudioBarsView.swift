@@ -36,14 +36,12 @@ class AudioBarsView: UIView {
         let maxHeight = barHeights.max() ?? 0
         
         for i in 0..<barHeights.count {
-            // Create a gray bar
             let grayBar = UIView()
             grayBar.translatesAutoresizingMaskIntoConstraints = false
             grayBar.layer.cornerRadius = 3
             grayBar.backgroundColor = .systemGray
             addSubview(grayBar)
             
-            // Create a red bar
             let redBar = UIView()
             redBar.translatesAutoresizingMaskIntoConstraints = false
             redBar.layer.cornerRadius = 3
@@ -51,7 +49,6 @@ class AudioBarsView: UIView {
             addSubview(redBar)
             redBars.append(redBar)
             
-            // Set gray bar constraints
             grayBar.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
             grayBar.heightAnchor.constraint(equalTo: heightAnchor, multiplier: CGFloat(barHeights[i]) / CGFloat(maxHeight)).isActive = true
             grayBar.widthAnchor.constraint(equalToConstant: 5).isActive = true
@@ -72,6 +69,7 @@ class AudioBarsView: UIView {
     
     func startAnimating(completion: @escaping () -> Void) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { [weak self] timer in
+            RunLoop.main.add(timer, forMode: .common)
             guard let self = self else { return }
             let currentRedBar = self.redBars[self.currentBarIndex]
             currentRedBar.frame.size.width = 0

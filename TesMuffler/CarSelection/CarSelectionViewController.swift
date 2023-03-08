@@ -41,11 +41,7 @@ class CarSelectionViewController: UIViewController {
             for: .touchUpInside
         )
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+
     @objc
     private func didTapPlay() {
         self.contentView.soundPlayerView.audioBarsView.stopAnimating()
