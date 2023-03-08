@@ -10,7 +10,7 @@ import UIKit
 
 class CarSelectionCustomCell: UITableViewCell {
     
-    static let identifier = {
+    static let identifier = {   
         String(describing: CarSelectionCustomCell.self)
     }()
     
@@ -33,7 +33,7 @@ class CarSelectionCustomCell: UITableViewCell {
     private let vehicleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
     
@@ -56,6 +56,10 @@ class CarSelectionCustomCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         setConstraints()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     required init?(coder: NSCoder) {
