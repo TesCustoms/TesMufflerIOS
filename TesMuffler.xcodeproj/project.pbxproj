@@ -21,8 +21,16 @@
 		580AB75829A7E45200E791FC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580AB75729A7E45200E791FC /* ProfileModel.swift */; };
 		581D7DF7299EAB4B00FF5790 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */; };
 		581D7DFA299EAB9B00FF5790 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D7DF9299EAB9B00FF5790 /* UserModelController.swift */; };
+		583B626329BAB0D9004986FB /* AMG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B625C29BAB0D9004986FB /* AMG.mp3 */; };
+		583B626429BAB0D9004986FB /* TRX.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B625D29BAB0D9004986FB /* TRX.mp3 */; };
+		583B626529BAB0D9004986FB /* C7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B625E29BAB0D9004986FB /* C7.mp3 */; };
+		583B626629BAB0D9004986FB /* S63.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B625F29BAB0D9004986FB /* S63.mp3 */; };
+		583B626729BAB0D9004986FB /* X6M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B626029BAB0D9004986FB /* X6M.mp3 */; };
+		583B626829BAB0D9004986FB /* PANAMERA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B626129BAB0D9004986FB /* PANAMERA.mp3 */; };
+		583B626929BAB0D9004986FB /* RS7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 583B626229BAB0D9004986FB /* RS7.mp3 */; };
 		5843AF0F29B670C700BBFCE9 /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */; };
 		5843AF3F29B7A81900BBFCE9 /* AudioBarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843AF3E29B7A81900BBFCE9 /* AudioBarsView.swift */; };
+		5863033929B921AD00D9ECBE /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863033829B921AD00D9ECBE /* AudioManager.swift */; };
 		5889E60429A411FF00F5064A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889E60329A411FF00F5064A /* SignUpViewModel.swift */; };
 		58A031DF29AD297900BAE7AD /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031DE29AD297900BAE7AD /* Preview.swift */; };
 		58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */; };
@@ -55,8 +63,16 @@
 		580AB75729A7E45200E791FC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		581D7DF6299EAB4B00FF5790 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		581D7DF9299EAB9B00FF5790 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
+		583B625C29BAB0D9004986FB /* AMG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AMG.mp3; path = ../../../Tracks/AMG.mp3; sourceTree = "<group>"; };
+		583B625D29BAB0D9004986FB /* TRX.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = TRX.mp3; path = ../../../Tracks/TRX.mp3; sourceTree = "<group>"; };
+		583B625E29BAB0D9004986FB /* C7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C7.mp3; path = ../../../Tracks/C7.mp3; sourceTree = "<group>"; };
+		583B625F29BAB0D9004986FB /* S63.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = S63.mp3; path = ../../../Tracks/S63.mp3; sourceTree = "<group>"; };
+		583B626029BAB0D9004986FB /* X6M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = X6M.mp3; path = ../../../Tracks/X6M.mp3; sourceTree = "<group>"; };
+		583B626129BAB0D9004986FB /* PANAMERA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PANAMERA.mp3; path = ../../../Tracks/PANAMERA.mp3; sourceTree = "<group>"; };
+		583B626229BAB0D9004986FB /* RS7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RS7.mp3; path = ../../../Tracks/RS7.mp3; sourceTree = "<group>"; };
 		5843AF0E29B670C700BBFCE9 /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
 		5843AF3E29B7A81900BBFCE9 /* AudioBarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBarsView.swift; sourceTree = "<group>"; };
+		5863033829B921AD00D9ECBE /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		5889E60329A411FF00F5064A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		58A031DE29AD297900BAE7AD /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		58A031E529AFF2AB00BAE7AD /* CarSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				DB1D8781291B150200FED633 /* Assets.xcassets */,
+				583B625C29BAB0D9004986FB /* AMG.mp3 */,
+				583B625E29BAB0D9004986FB /* C7.mp3 */,
+				583B626129BAB0D9004986FB /* PANAMERA.mp3 */,
+				583B626229BAB0D9004986FB /* RS7.mp3 */,
+				583B625F29BAB0D9004986FB /* S63.mp3 */,
+				583B625D29BAB0D9004986FB /* TRX.mp3 */,
+				583B626029BAB0D9004986FB /* X6M.mp3 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -182,6 +205,14 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		585EAEE829B9670E00A88F0F /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				5863033829B921AD00D9ECBE /* AudioManager.swift */,
+			);
+			path = AudioManager;
+			sourceTree = "<group>";
+		};
 		58A031E429AE7BAC00BAE7AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +281,7 @@
 			children = (
 				58A031DE29AD297900BAE7AD /* Preview.swift */,
 				DB1D8786291B150200FED633 /* Info.plist */,
+				585EAEE829B9670E00A88F0F /* AudioManager */,
 				58042D24299BFA14005273F4 /* Media */,
 				58BB802029A69AAB003C8A4C /* CarSelection */,
 				581D7DF8299EAB8400FF5790 /* ModelController */,
@@ -321,8 +353,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583B626529BAB0D9004986FB /* C7.mp3 in Resources */,
+				583B626729BAB0D9004986FB /* X6M.mp3 in Resources */,
+				583B626329BAB0D9004986FB /* AMG.mp3 in Resources */,
 				DB1D8782291B150200FED633 /* Assets.xcassets in Resources */,
+				583B626629BAB0D9004986FB /* S63.mp3 in Resources */,
 				DB1D8780291B150100FED633 /* Main.storyboard in Resources */,
+				583B626929BAB0D9004986FB /* RS7.mp3 in Resources */,
+				583B626429BAB0D9004986FB /* TRX.mp3 in Resources */,
+				583B626829BAB0D9004986FB /* PANAMERA.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +390,7 @@
 				58A031E629AFF2AB00BAE7AD /* CarSelectionViewModel.swift in Sources */,
 				5843AF3F29B7A81900BBFCE9 /* AudioBarsView.swift in Sources */,
 				58042D37299C0801005273F4 /* ProfileView.swift in Sources */,
+				5863033929B921AD00D9ECBE /* AudioManager.swift in Sources */,
 				58BB802229A69B4D003C8A4C /* CarSelectionCustomCell.swift in Sources */,
 				580AB75429A7DBA300E791FC /* CustomInfoCell.swift in Sources */,
 				58A031ED29AFFB0A00BAE7AD /* SettingsModelController.swift in Sources */,
@@ -512,11 +552,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example..TesMuffler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -546,11 +587,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example..TesMuffler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

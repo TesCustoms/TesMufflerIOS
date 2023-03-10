@@ -22,7 +22,8 @@ final class TabBarController: UITabBarController {
     
     private func setControllers() {
         let CarSelectionVC = CarSelectionViewController(
-            settingsModelController: SettingsModelController.shared
+            settingsModelController: SettingsModelController.shared,
+            audioManager: AudioManager.shared
         )
         CarSelectionVC.tabBarItem = UITabBarItem(
             title: "Connect",
