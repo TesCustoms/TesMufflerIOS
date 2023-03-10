@@ -60,6 +60,14 @@ class ProfileView: UIView {
         return tableView
     }()
     
+    let rightBarView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
+        view.isHidden = true
+        return view
+    }()
+    
     let logoutButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +80,6 @@ class ProfileView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
         setScrollView()
         setConstraints()
     }
@@ -102,6 +109,7 @@ class ProfileView: UIView {
     
     private func setConstraints() {
         backView.addSubview(profileImageView)
+        backView.addSubview(rightBarView)
         backView.addSubview(tableView)
         backView.addSubview(logoutButton)
         
@@ -114,6 +122,11 @@ class ProfileView: UIView {
         tableView.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 10).isActive = true
         tableView.rightAnchor.constraint(equalTo: backView.rightAnchor, constant: -25).isActive = true
         tableView.bottomAnchor.constraint(equalTo: logoutButton.topAnchor, constant: -20).isActive = true
+        
+        rightBarView.topAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+        rightBarView.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: -5).isActive = true
+        rightBarView.leftAnchor.constraint(equalTo: tableView.rightAnchor).isActive = true
+        rightBarView.rightAnchor.constraint(equalTo: backView.rightAnchor, constant: -10).isActive = true
         
         logoutButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5).isActive = true
         logoutButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true

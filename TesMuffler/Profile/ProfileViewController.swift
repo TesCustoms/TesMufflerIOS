@@ -119,8 +119,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let dummyData = viewModel.dummyData[indexPath.row]
         if isPencilTapped == true {
             cell.pencilTappedTrueCellConfig()
+            contentView.rightBarView.isHidden = false
         } else {
             cell.pencilTappedFalseCellConfig()
+            contentView.rightBarView.isHidden = true
         }
         cell.xButton.tag = indexPath.row
         cell.xButton.addTarget(
@@ -145,7 +147,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let textField = alertController.textFields?.first else {
                     return
                 }
-                
                 self.viewModel.dummyData[indexPath.row] = textField.text ?? ""
                 self.contentView.tableView.reloadData()
             }))
@@ -160,8 +161,27 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc private func didTapXButton(_ sender: UIButton) {
         let row = sender.tag
+        let original = viewModel.dummyData[row]
         viewModel.dummyData[row] = ""
-        contentView.tableView.reloadData()
+        let label = viewModel.dummyData[row]
+        let alertController = UIAlertController(title: "Edit Text", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = label
+            self.contentView.tableView.reloadData()
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+            self.viewModel.dummyData[row] = original
+            self.contentView.tableView.reloadData()
+        }))
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
+            guard let textField = alertController.textFields?.first else {
+                return
+            }
+            let didTypeInField = textField.text != "" ? textField.text : original
+            self.viewModel.dummyData[row] = didTypeInField ?? ""
+            self.contentView.tableView.reloadData()
+        }))
+        present(alertController, animated: true)
     }
 }
 
