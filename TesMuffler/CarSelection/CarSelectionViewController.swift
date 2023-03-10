@@ -10,17 +10,19 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class CarSelectionViewController: UIViewController {
     
     private let settingsModelController: SettingsModelController
     private let viewModel = CarSelectionViewModel()
     private let contentView = CarSelectionView()
+    private let audioManager: AudioManager
     private var lastSelectedIndexPath: IndexPath?
-    private var cellIndex = Int()
     
-    init(settingsModelController: SettingsModelController) {
+    init(settingsModelController: SettingsModelController, audioManager: AudioManager) {
         self.settingsModelController = settingsModelController
+        self.audioManager = audioManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,37 +44,26 @@ class CarSelectionViewController: UIViewController {
             for: .touchUpInside
         )
     }
-    
+
     @objc
-    private func didTapPlay() {
+    private func didTapPlay(_ sender: UIButton) {
         guard contentView.soundPlayerView.carTitleLabel.text != "Select A Car Sound" else {
-            let alertController = UIAlertController(title: "Car Not Selected!\n", message: "To play a vehicle sound, please select one of the following options below.\n\nThank you!", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Car Not Selected!\n", message: "To play a vehicle sound, please select the car sound of our choice.\n\nThank you!", preferredStyle: .alert)
             let action = UIAlertAction(title: "Okay", style: .default)
             alertController.addAction(action)
             present(alertController, animated: true)
             return
         }
+        let data = viewModel.carAudioData[lastSelectedIndexPath?.row ?? 0]
+        self.audioManager.playAudio(with: data)
         self.contentView.soundPlayerView.audioBarsView.stopAnimating()
         self.contentView.soundPlayerView.setRestartButton()
         contentView.soundPlayerView.audioBarsView.startAnimating { [weak self] in
             self?.contentView.soundPlayerView.setPlayButton()
+            self?.audioManager.player.stop()
         }
     }
     
-    @objc
-    private func settingsButtonTapped(_ sender: UIButton) {
-        let settingsVC = VolumeSettingsViewController(
-            settingsModelController: SettingsModelController.shared
-        )
-        let data = viewModel.dummyData[sender.tag]
-        guard let photoData = viewModel.carImages[sender.tag] else { return }
-        let navigationController = UINavigationController(
-            rootViewController: settingsVC
-        )
-        navigationController.modalPresentationStyle = .fullScreen
-        settingsModelController.setDomainData(with: data, and: photoData)
-        present(navigationController, animated: true)
-    }
 }
 
 extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -82,12 +73,13 @@ extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dummyData.count
+        return viewModel.carData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarSelectionCustomCell.identifier, for: indexPath) as? CarSelectionCustomCell else { return UITableViewCell() }
-        cell.setVehicleLabels(with: viewModel.dummyData[indexPath.row])
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarSelectionCustomCell.identifier, for: indexPath) as? CarSelectionCustomCell else { return UITableViewCell()}
+        cell.backgroundColor = .clear
+        cell.setVehicleLabels(with: viewModel.carData[indexPath.row])
         cell.setVehicleImage(with: viewModel.carImages[indexPath.row] ?? UIImage())
         cell.settingsButton.tag = indexPath.row
         cell.settingsButton.addTarget(
@@ -98,8 +90,26 @@ extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    @objc
+    private func settingsButtonTapped(_ sender: UIButton) {
+        let settingsVC = VolumeSettingsViewController(
+            settingsModelController: SettingsModelController.shared
+        )
+        let data = viewModel.carData[sender.tag]
+        guard let photoData = viewModel.carImages[sender.tag] else { return }
+        let navigationController = UINavigationController(
+            rootViewController: settingsVC
+        )
+        navigationController.modalPresentationStyle = .fullScreen
+        settingsModelController.setDomainData(with: data, and: photoData)
+        present(navigationController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as? CarSelectionCustomCell
+        if selectedCell?.containerView.backgroundColor == UIColor(cgColor:  CGColor(red: 167/255, green: 5/255, blue: 23/255, alpha: 1.0)).withAlphaComponent(0.9) {
+            return
+        }
         selectedCell?.containerView.backgroundColor = UIColor(cgColor:  CGColor(red: 167/255, green: 5/255, blue: 23/255, alpha: 1.0)).withAlphaComponent(0.9)
         selectedCell?.containerView.layer.borderWidth = 1.0
         if let lastSelectedIndexPath = lastSelectedIndexPath {
@@ -109,9 +119,10 @@ extension CarSelectionViewController: UITableViewDelegate, UITableViewDataSource
         }
         lastSelectedIndexPath = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
-        contentView.soundPlayerView.carTitleLabel.text = viewModel.dummyData[indexPath.row]
+        contentView.soundPlayerView.carTitleLabel.text = viewModel.carData[indexPath.row]
         contentView.soundPlayerView.audioBarsView.stopAnimating()
         contentView.soundPlayerView.setPlayButton()
+        self.audioManager.player.stop()
     }
 }
 

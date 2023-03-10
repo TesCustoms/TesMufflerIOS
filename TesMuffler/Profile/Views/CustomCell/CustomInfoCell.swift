@@ -42,7 +42,7 @@ class CustomInfoCell: UITableViewCell {
         contentView.addSubview(xButton)
         
         xButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        xButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        xButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         xButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         xButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class CarSelectionViewModel {
     
-    var dummyData = [
+    var carData = [
     "DODGE RAM TRX",
     "MERCEDES AMG G63",
     "BMW X6M",
@@ -28,5 +28,15 @@ class CarSelectionViewModel {
         UIImage(named: "AudiRS7"),
         UIImage(named: "c7vette"),
         UIImage(named: "MERCEDESS63")
+    ]
+    
+    var carAudioData = [
+    "TRX",
+    "AMG",
+    "X6M",
+    "PANAMERA",
+    "RS7",
+    "C7",
+    "S63"
     ]
 }
